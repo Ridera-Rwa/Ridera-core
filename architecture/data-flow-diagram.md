@@ -1,4 +1,4 @@
-# Ridera Data Flow Architecture  
+# Ridera Data Flow Architecture
 ### (Global Mobility → Oracle → SRU → Vault → Stakers)
 
 This document explains the complete Ridera pipeline from proof ingestion to on-chain yield distribution.  
@@ -10,12 +10,10 @@ It includes full diagrams in **Mermaid (GitHub native)** and **ASCII** formats f
 
 Ridera processes global mobility earnings through four major layers:
 
-1. **Submission Layer**  
-2. **Verification Layer (Oracle)**  
-3. **Standardization Layer (SRU Engine)**  
-4. **On-Chain Settlement Layer (Base)**
-
-Below is the complete high-level flow.
+1. Submission Layer  
+2. Verification Layer (Oracle)  
+3. Standardization Layer (SRU Engine)  
+4. On-Chain Settlement Layer (Base)
 
 ---
 
@@ -23,15 +21,17 @@ Below is the complete high-level flow.
 
 ```mermaid
 flowchart LR
-    A[Driver / Fleet<br>Submit Earnings] --> B[Submission Layer<br>(images, PDFs, logs)]
-    B --> C[Ridera Oracle<br>OCR + ML + Rules]
-    C --> D[Validation Outcome<br>(Valid / Flagged)]
-    D --> E[SRU Engine<br>Normalization + Weighting]
-    E --> F[SRU Batch Builder]
-    F --> G[Batch Merkle Tree<br>Root Generation]
-    G --> H[On-Chain Commit<br>ProofRegistry on Base]
-    H --> I[Yield Vault<br>SRU Accounting]
-    I --> J[Staking & Rewards<br>$RDR Distribution]
+    A["Driver / Fleet\nSubmit Earnings"]
+        --> B["Submission Layer\n(images, PDFs, logs)"]
+
+    B --> C["Ridera Oracle\nOCR + ML + Rules"]
+    C --> D["Validation Outcome\nValid / Flagged"]
+    D --> E["SRU Engine\nNormalization + Weighting"]
+    E --> F["SRU Batch Builder"]
+    F --> G["Batch Merkle Tree\nRoot Generation"]
+    G --> H["On-Chain Commit\nProofRegistry (Base)"]
+    H --> I["Yield Vault\nSRU Accounting"]
+    I --> J["Staking & Rewards\n$RDR Distribution"]
 ```
 
 ---
@@ -75,20 +75,15 @@ Workers submit earnings via:
 
 - Screenshots  
 - PDF payout statements  
-- Multi-platform bundles (Uber + DoorDash + Grab)  
+- Multi-platform bundles (Uber, DoorDash, Grab…)  
 - Weekly logs  
 - Fleet bulk submissions  
 
-Submission metadata includes:
+Submission metadata includes region, platform, currency, timestamps, device data, and optional GPS hash.
 
-- region tag  
-- platform ID  
-- currency  
-- timestamps  
-- device metadata  
-- optional GPS hash  
+The data flows:
 
-Front-end → backend → Oracle queue.
+`Front-end → Backend API → Oracle Queue`
 
 ---
 
@@ -96,19 +91,21 @@ Front-end → backend → Oracle queue.
 
 This is the core validation engine.
 
-Below is the step-by-step verification flow using Mermaid.
+### Mermaid (error-free version)
 
 ```mermaid
 flowchart TD
-    A[Raw Input] --> B[OCR Extraction]
-    B --> C[Platform Structure Validator]
-    C --> D[Timestamp Validator]
-    D --> E[Region Consistency Model]
-    E --> F[Duplicate Check / Hashing]
-    F --> G[ML Anomaly Detection]
-    G --> H{Pass Validation?}
-    H -->|No| I[Reject<br>Flagged for Validator Review]
-    H -->|Yes| J[Approved<br>→ SRU Engine]
+    A["Raw Input"] --> B["OCR Extraction"]
+    B --> C["Platform Structure Validator"]
+    C --> D["Timestamp Validator"]
+    D --> E["Region Consistency Model"]
+    E --> F["Duplicate / Hash Check"]
+    F --> G["ML Anomaly Detection"]
+
+    G --> H{Validation Pass?}
+
+    H -->|No| I["Reject / Flag"]
+    H -->|Yes| J["Approved → SRU Engine"]
 ```
 
 ---
@@ -163,30 +160,26 @@ flowchart TD
 
 # 7. SRU Engine Flow
 
-The SRU Engine converts approved earnings into **Standardized Revenue Units** using:
+The SRU Engine converts approved earnings into **Standardized Revenue Units (SRU)** using:
 
-- currency normalization  
-- region weights  
-- platform coefficients  
-- volatility adjustments  
+- Currency normalization  
+- Region weights  
+- Platform coefficients  
+- Volatility adjustments  
 
-### SRU Calculation Flow (Mermaid)
+### Mermaid (error-free version)
 
 ```mermaid
 flowchart LR
-    A[Approved Earnings] --> B[Currency Normalization]
-    B --> C[Region Weighting]
-    C --> D[Platform Coefficient Adjustment]
-    D --> E[SRU Output]
+    A["Approved Earnings"] --> B["Currency Normalization"]
+    B --> C["Region Weighting"]
+    C --> D["Platform Coefficient Adjustment"]
+    D --> E["SRU Output"]
 ```
 
 ---
 
 # 8. SRU Batching & Merkle Tree Creation
-
-Once SRUs are generated, Ridera groups them into batches.
-
-### Batch Flow Diagram (ASCII)
 
 ```
 [ SRU Outputs ]
@@ -208,54 +201,52 @@ Once SRUs are generated, Ridera groups them into batches.
 
 # 9. On-Chain Settlement (Base)
 
-The following contracts live on Base:
+The Base contracts:
 
-- **ProofRegistry**  
-  Stores Merkle roots and SRU metadata.
+- **ProofRegistry** — Stores Merkle roots & metadata  
+- **YieldVault** — Aggregates SRUs and generates yield cycles  
+- **Staking** — Tracks $RDR stakes & reward entitlement  
+- **ValidatorRegistry** — Manages validator bonding & slashing  
 
-- **YieldVault**  
-  Aggregates SRUs and calculates yield cycles.
-
-- **Staking**  
-  Tracks $RDR stakes and reward allocation.
-
-- **ValidatorRegistry**  
-  Handles validator bonding & slashing.
-
-### Mermaid Diagram (complete on-chain flow)
+### Mermaid (error-free version)
 
 ```mermaid
 flowchart TD
-    A[Batch Merkle Root<br>Commit] --> B[ProofRegistry]
-    B --> C[YieldVault<br>Update SRU Totals]
-    C --> D[Staking<br>Check Stake Distribution]
-    D --> E[YieldVault.distribute()<br>Reward Cycle]
-    E --> F[$RDR Stakers<br>Receive Yield]
+    A["Batch Merkle Root Commit"]
+        --> B["ProofRegistry"]
+
+    B --> C["YieldVault\nUpdate SRU Totals"]
+    C --> D["Staking\nCheck Stake Distribution"]
+    D --> E["YieldVault.distribute()\nExecute Reward Cycle"]
+    E --> F["$RDR Stakers\nReceive Yield"]
 ```
 
 ---
 
 # 10. End-to-End Full System Diagram (Mermaid)
 
+Corrected version with **valid subgraph syntax**:
+
 ```mermaid
 flowchart LR
-    subgraph Off-Chain
-        A[Drivers & Fleets] --> B[Submission API]
-        B --> C[Ridera Oracle]
-        C --> D[SRU Engine]
-        D --> E[Batcher + Merkle Builder]
+
+    subgraph OFFCHAIN["Off-Chain System"]
+        A["Drivers & Fleets"] --> B["Submission API"]
+        B --> C["Ridera Oracle"]
+        C --> D["SRU Engine"]
+        D --> E["Batcher + Merkle Builder"]
     end
 
-    subgraph On-Chain (Base)
-        F[ProofRegistry]
-        G[YieldVault]
-        H[Staking]
+    subgraph ONCHAIN["On-Chain (Base)"]
+        F["ProofRegistry"]
+        G["YieldVault"]
+        H["Staking"]
     end
 
     E --> F
     F --> G
     G --> H
-    H --> J[$RDR Stakers]
+    H --> J["$RDR Stakers"]
 ```
 
 ---
@@ -275,9 +266,10 @@ This file should be updated whenever:
 
 - new platforms are added  
 - SRU weighting changes  
-- Oracle version updates  
+- Oracle model updates  
 - batch structure changes  
 
 ---
 
-*Document version: v1.0 — Architecture / Data Flow*  
+*Document version: v1.1 — Architecture / Data Flow (Mermaid-Fixed)*
+
