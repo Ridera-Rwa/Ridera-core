@@ -1,1 +1,2 @@
+# Ridera Brand Colors (placeholder)
 
