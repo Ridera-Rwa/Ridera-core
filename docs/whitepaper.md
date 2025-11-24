@@ -1,4 +1,4 @@
-# Ridera Whitepaper v2.0  
+# Ridera Whitepaper v1.0  
 ### Global Mobility RWA Protocol  
 ### Real-World Mobility → On-Chain Earnings  
 ### Built on Base
