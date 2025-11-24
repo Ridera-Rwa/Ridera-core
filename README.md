@@ -1,2 +1,328 @@
-# Ridera-core
-Core protocol repository for Ridera — Mobility RWA on Base.  Includes docs, architecture, smart contracts, and protocol design.
+# Ridera Protocol  
+### Global Mobility → On-Chain Earnings  
+### A Mobility RWA Infrastructure Layer Built on Base
+
+---
+
+# 1. Overview
+
+Ridera is a global Real-World Asset (RWA) protocol that transforms real mobility revenue into transparent, verifiable, on-chain yield. It enables riders, couriers, and fleet operators from around the world to convert their verified earnings into standardized on-chain value, while users earn yield backed by real economic activity.
+
+The protocol standardizes mobility income from ride-hailing, food delivery, parcel courier services, and logistics fleets across 195+ countries. Through the Ridera Oracle, earnings proofs are verified, transformed into standardized revenue units, pooled in the Yield Vault, and distributed proportionally to $RDR stakers on Base.
+
+Ridera is not a mobility app.  
+It is the **global infrastructure layer** that sits above all mobility platforms and unifies their revenue into a decentralized, transparent financial system.
+
+---
+
+# 2. Mission
+
+Ridera’s mission is to create the world’s first universal financial layer for mobility income—an open, decentralized, and transparent RWA system that reflects the real economic output of global drivers and fleets.
+
+The mobility industry produces continuous, high-frequency revenue, yet remains fully siloed. Ridera opens this value to the world.
+
+---
+
+# 3. The Problem
+
+The global mobility economy faces several systemic issues:
+
+## 3.1 Closed, Centralized Data  
+Ride-hailing and delivery platforms control all earnings data.  
+External users cannot verify:
+
+- daily revenue flows  
+- fleet performance  
+- multi-platform income  
+- regional activity patterns  
+
+## 3.2 No Public Participation  
+Millions of drivers generate revenue every day, but:
+
+- no tokenized yield exists  
+- no RWA structure is available  
+- revenue cannot be accessed on-chain  
+- investors cannot participate in mobility yield  
+
+## 3.3 Fragmented Global Ecosystem  
+Each region uses different platforms, currencies, rules, and payout formats, preventing standardization.
+
+## 3.4 Lack of Verification Infrastructure  
+There is no global system that validates earnings from:
+
+- Uber, Lyft, Bolt  
+- DoorDash, Deliveroo, iFood  
+- Grab, Gojek, Foodpanda  
+- Careem, Rappi, Didi  
+- thousands of regional platforms  
+
+## 3.5 Untapped RWA Potential  
+Mobility revenue is:
+
+- real  
+- global  
+- high-frequency  
+- demand-driven  
+- recession-resistant  
+- tied to essential economic activity  
+
+Yet no protocol tokenizes it.  
+Ridera is the first to do so.
+
+---
+
+# 4. Ridera: The Solution
+
+Ridera introduces a fully standardized, global model for verifying mobility income and transforming it into on-chain yield.
+
+The protocol consists of:
+
+- Global Fleet Revenue Proofs (G-FRP)  
+- Ridera Oracle (multi-layer verification engine)  
+- Standardized Revenue Units (SRU)  
+- Yield Vault and distribution layer  
+- Dashboard with full global transparency  
+- Validator network for decentralized verification  
+- $RDR token for staking, governance, and validation  
+
+The result is a universal infrastructure layer that bridges real-world mobility with DeFi.
+
+---
+
+# 5. How Ridera Works
+
+Ridera operates through a four-layer flow:
+
+## 5.1 Revenue Submission  
+Drivers and fleets upload earnings via:
+
+- platform statements  
+- screenshots (OCR-processed)  
+- multi-platform aggregation  
+- time-synced entries  
+
+## 5.2 Oracle Verification  
+The Ridera Oracle validates earnings using:
+
+- timestamp checks  
+- region pattern matching  
+- anomaly detection  
+- ML-based fraud analysis  
+- validator review  
+- reputation scoring  
+
+Verified earnings convert into **Standardized Revenue Units (SRU)**.
+
+## 5.3 Yield Vault  
+All SRUs flow into the Ridera Yield Vault, which:
+
+- aggregates revenue  
+- calculates global yield  
+- distributes proportional rewards  
+- logs on-chain transparency data  
+
+## 5.4 Yield Distribution  
+$RDR stakers receive daily yield based on:
+
+- global SRU volume  
+- region weighting  
+- total staked supply  
+- validator accuracy  
+
+This yield is directly backed by verified mobility income.
+
+---
+
+# 6. Architecture Overview
+
+Ridera’s architecture is structured into four layers.
+
+## 6.1 Data Ingestion Layer  
+Handles the onboarding of:
+
+- drivers  
+- couriers  
+- fleets  
+- multi-region partners  
+
+Includes parsing, normalization, and metadata mapping.
+
+## 6.2 Verification Layer (Ridera Oracle)  
+Performs:
+
+- OCR  
+- timestamp validation  
+- location consistency checks  
+- anomaly scoring  
+- fraud detection  
+- validator routing  
+
+The Oracle evolves from semi-automated (v1) → fully automated (v2) → API-integrated (v3).
+
+## 6.3 Yield Layer  
+Smart contracts responsible for:
+
+- SRU accounting  
+- revenue aggregation  
+- yield calculation  
+- staker distribution  
+- treasury operations  
+
+## 6.4 Transparency Layer  
+Provides:
+
+- global analytics  
+- region-wise revenue  
+- validator scoring  
+- yield logs  
+- protocol metrics  
+
+---
+
+# 7. Base Chain Integration
+
+Ridera is built natively on Base due to:
+
+- extremely low fees  
+- suitability for micro-yield cycles  
+- global accessibility  
+- Coinbase-secured infrastructure  
+- strong developer ecosystem  
+
+Base provides the ideal environment for scaling a high-frequency RWA system.
+
+---
+
+# 8. Core Components
+
+## 8.1 Ridera Oracle  
+Validates earnings with multi-layer verification and ML modeling.
+
+## 8.2 Global Fleet Portal  
+Allows global drivers and fleets to submit earnings seamlessly.
+
+## 8.3 Yield Vault  
+Aggregates SRUs and distributes yield.
+
+## 8.4 Validator Network  
+Decentralized reviewers who ensure integrity and accuracy.
+
+## 8.5 Transparency Dashboard  
+Displays real-time global performance and yield metrics.
+
+## 8.6 $RDR Token  
+Used for staking, governance, validation, and protocol access.
+
+---
+
+# 9. The RWA Model
+
+Ridera introduces a new category of RWA:
+
+**Mobility Yield RWA (MY-RWA)**
+
+This model converts real mobility revenue into:
+
+- standardized on-chain yield  
+- globally accessible digital value  
+- transparent, open financial streams  
+
+Mobility is uniquely positioned because:
+
+- demand is constant  
+- revenue is updated daily  
+- labor activity is global  
+- income is non-speculative  
+- participation is massive  
+
+Ridera turns this into a transparent digital asset class.
+
+---
+
+# 10. Repository Structure
+
+```
+/docs
+   litepaper.md
+   whitepaper.md
+   rwa-model.md
+
+/smart-contracts
+   RideraToken.sol
+   Staking.sol
+   YieldVault.sol
+   RideraOracle.sol
+
+/architecture
+   protocol-overview.md
+   base-integration.md
+   data-flow.md
+
+/tokenomics
+   tokenomics.md
+   supply-model.md
+
+/roadmap
+   2025.md
+   2026.md
+
+/brand
+   logo.png
+   banner.png
+
+/scripts
+   deploy.js
+   test.js
+```
+
+Each folder follows enterprise documentation standards.
+
+---
+
+# 11. Roadmap Summary
+
+## Q4 2025 — Alpha/Beta Development Phase
+- Fleet Portal v1  
+- Oracle v1  
+- Beta fleet onboarding  
+- Internal earnings simulation  
+- Audit preparation  
+- Documentation + Base testing  
+
+## Q1 2026 — Public Testnet
+- Testnet Ridera deployment  
+- Testnet $RDR token  
+- Testnet yield simulation  
+- Validator trial program  
+- 50–100 fleets connected  
+- Testnet analytics dashboard  
+
+## Q1 2026 — Mainnet Launch
+- Mainnet $RDR  
+- Yield Vault activation  
+- Revenue → Yield pipeline  
+- Transparency dashboard (global)  
+- 100–200 fleets onboarded worldwide  
+
+## Q2 2026 — Expansion
+- Oracle v2 automation  
+- Regional partnerships  
+- API integrations  
+- Advanced analytics  
+- Global scaling  
+
+---
+
+# 12. Links
+
+- Website: https://ridera.org  
+- X: https://x.com/Ridera_Official  
+- GitHub: https://github.com/Ridera-Rwa  
+- Email: contact.ridera@gmail.com  
+
+---
+
+# 13. License
+
+MIT License (see LICENSE file in repository)
+
