@@ -4,6 +4,7 @@
 Real-World Mobility → On-Chain Earnings
 A global mobility RWA protocol built on Base.
 
+
 1. Introduction
 
 Mobility is one of the world’s largest and most consistent economic sectors.
@@ -15,6 +16,7 @@ Yet despite its massive scale, the global mobility economy remains closed-off to
 There is no transparent, tokenized way for users, investors, or decentralized communities to access mobility-generated income.
 
 Ridera solves this by turning global mobility revenue into verifiable, transparent on-chain yield.
+
 
 2. The Global Mobility Problem
 
@@ -72,6 +74,7 @@ Asia: Grab, Gojek, Foodpanda
 
 Ridera is building the first universal mobility RWA layer that works across all regions.
 
+
 3. Ridera — The Global Solution
 
 Ridera transforms worldwide mobility earnings into a global, trustless RWA yield economy.
@@ -123,6 +126,7 @@ Global mobility insights
 
 Data transparency unheard of in Web2 mobility
 
+
 4. How Ridera Works — Global Flow
 Step 1 — Global Fleets Register
 
@@ -156,6 +160,7 @@ Step 5 — Public Transparency Dashboard
 
 Every yield flow, proof, mobility batch, and fleet contribution is displayed in real time.
 
+
 5. Why Base for Ridera?
 
 Base is the strongest chain for a global RWA mobility protocol because:
@@ -179,6 +184,7 @@ global fleets
 
 global asset providers
 
+
 6. The $RDR Token
 
 $RDR powers Ridera’s global mobility economy.
@@ -198,6 +204,7 @@ Reputation weight: Higher $RDR stake → more influence in validating fleet proo
 Long-Term Vision
 
 $RDR becomes the first global mobility RWA token, backed by real activity from delivery networks, ride-hailing platforms, and real-world fleets.
+
 
 7. Global Mobility RWA Advantage
 
@@ -222,6 +229,7 @@ Globally distributed
 This makes mobility one of the strongest RWA categories in the world.
 
 Ridera is building the first scalable protocol in this category.
+
 
 8. Roadmap (Extended Global Version)
 Phase 1 — Foundation (Now – Q4 2025)
@@ -281,6 +289,7 @@ Zero-knowledge mobility proofs
 Integration with global ride/delivery platforms
 
 Geographic expansion to 40+ countries
+
 
 9. Contact
 
