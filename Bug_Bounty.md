@@ -20,7 +20,7 @@ This program covers all Ridera smart contracts, backend services, and frontend c
 - Any Ridera contracts deployed on testnet or beta
 
 #### *Web Application*
-- https://ridera.xyz  
+- https://ridera.org
 - Beta Panel  
 - Dashboard, Staking UI, SRU UI  
 - Contract interaction modules
