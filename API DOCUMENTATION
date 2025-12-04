@@ -1,0 +1,188 @@
+# 📡 Ridera Protocol – API Documentation
+
+This document describes the Ridera backend API used by the SRU Engine, Staking Dashboard, and Beta Testing Panel.
+
+---
+
+# 🔐 Authentication
+
+Most endpoints require an *API token* or *signed wallet message*.
+
+Header:
+
+Authorization: Bearer <token>
+
+Wallet-auth header:
+
+X-Wallet: <address> X-Signature: <signedMessage>
+
+---
+
+# 📘 Endpoints Overview
+
+## 1️⃣ *SRU Engine Endpoints*
+
+### *POST /sru/submit*
+Submit SRU data for a cycle.
+
+*Body:*
+```json
+{
+  "cycleId": 47,
+  "userWallet": "0xABC...",
+  "platform": "Swiggy",
+  "region": "india",
+  "earnings": 1200,
+  "generatedSru": 22
+}
+
+Response:
+
+{
+  "success": true,
+  "message": "SRU submitted"
+}
+
+
+---
+
+GET /sru/user/{wallet}
+
+Get all SRU entries for a user.
+
+Response:
+
+{
+  "wallet": "0xABC...",
+  "totalSRU": 99,
+  "cycles": [
+    {
+      "cycleId": 47,
+      "sru": 22,
+      "earnings": 1200
+    }
+  ]
+}
+
+
+---
+
+2️⃣ Proof Registry Endpoints
+
+GET /registry/cycle/{id}
+
+Fetch cycle data stored in contract.
+
+Response:
+
+{
+  "cycleId": 47,
+  "merkleRoot": "0x73655...",
+  "totalSRU": 9000,
+  "timestamp": 173456222
+}
+
+
+---
+
+POST /registry/submit
+
+Submit merkle root for a cycle.
+
+Body:
+
+{
+  "cycleId": 47,
+  "merkleRoot": "0xAAA123...",
+  "totalSRU": 8200
+}
+
+
+---
+
+3️⃣ Staking Endpoints
+
+GET /staking/user/{wallet}
+
+Fetch user staking info.
+
+Response:
+
+{
+  "wallet": "0xABC...",
+  "staked": 1000,
+  "pendingRewards": 44,
+  "claimedCycles": [45, 46]
+}
+
+
+---
+
+POST /staking/stake
+
+Stake RDRT tokens.
+
+Body:
+
+{
+  "wallet": "0xABC...",
+  "amount": 500
+}
+
+
+---
+
+POST /staking/claim
+
+Claim rewards for all cycles.
+
+
+---
+
+4️⃣ Yield Vault Endpoints
+
+POST /vault/process
+
+Process rewards for a cycle.
+
+Body:
+
+{
+  "cycleId": 47
+}
+
+Response:
+
+{
+  "message": "Processed successfully",
+  "cycleId": 47,
+  "rewardDistributed": 5000
+}
+
+
+---
+
+📊 Error Response Format
+
+{
+  "success": false,
+  "error": "Invalid cycle ID"
+}
+
+
+---
+
+🧪 Rate Limits
+
+60 requests/min per IP
+
+120 requests/min per authenticated wallet
+
+
+
+---
+
+⚠ Disclaimer
+
+This API is for beta phase only.
+Endpoints may change during audits and pre-mainnet launch.
