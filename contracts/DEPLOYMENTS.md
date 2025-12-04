@@ -10,6 +10,7 @@ before Testnet Public and Mainnet launch.
 
 ### 1. RDRT Token (ERC20)
 **Address**: 0x3d6a3a22A4670594878c71cFcE1eF3d28E170591 
+
 **Purpose**:  
 - Native token for staking and rewards  
 - Utility token across the Ridera protocol  
@@ -18,6 +19,7 @@ before Testnet Public and Mainnet launch.
 
 ### 2. Proof Registry
 *Address:* 0x366692Ef6a728062CC559f8b1f46cE64448f528d 
+
 *Purpose:*  
 - Stores cycleId → (merkleRoot, totalSRU, timestamp)  
 - Receives SRU data from SRU Engine or admin  
