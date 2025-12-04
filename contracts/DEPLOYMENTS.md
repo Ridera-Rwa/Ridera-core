@@ -28,7 +28,7 @@ before Testnet Public and Mainnet launch.
 ---
 
 ### 3. Yield Vault  
-*Address:* 0x5916E2e4e60ad57796345C1eb09313228D575572  
+*Address:* 0x5916E2e4e60ad57796345C1eb09313228D575572   
 *Purpose:*  
 - Reads cycle data from Proof Registry  
 - Calculates daily RDRT rewards  
