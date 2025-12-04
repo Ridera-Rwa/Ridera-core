@@ -1,4 +1,4 @@
-Ridera Protocol – Beta Deployment Overview
+# Ridera Protocol – Beta Deployment Overview
 
 This document contains the temporary beta contract deployments used for internal 
 and community testing. These contracts are NOT final and will be redeployed 
@@ -6,11 +6,11 @@ before Testnet Public and Mainnet launch.
 
 ---
 
-🚀 Current Beta Contracts
+## 🚀 Current Beta Contracts
 
-1. RDRT Token (ERC20)
-Address: 0x3d6a3a22A4670594878c71cFcE1eF3d28E170591 
-Purpose:  
+### 1. RDRT Token (ERC20)
+**Address**: 0x3d6a3a22A4670594878c71cFcE1eF3d28E170591 
+**Purpose**:  
 - Native token for staking and rewards  
 - Utility token across the Ridera protocol  
 
