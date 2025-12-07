@@ -34,75 +34,195 @@ This is the future of work-based finance — and Ridera is building the foundati
 
 # 2. Mission
 
-Ridera’s mission is to create the world’s first universal financial layer for mobility income—an open, decentralized, and transparent RWA system that reflects the real economic output of global drivers and fleets.
+# 2. Mission
 
-The mobility industry produces continuous, high-frequency revenue, yet remains fully siloed. Ridera opens this value to the world.
+Ridera’s mission is to redefine how human work is measured, valued, and connected to the global financial system.
+
+Today, millions of gig and mobility workers generate real economic value through their daily labor, yet their contributions remain undervalued, unrecorded, and financially inaccessible. Income is fragmented across platforms, difficult to verify, and offers no long-term benefit beyond daily earnings. As a result, workers lack access to credit, stable rewards, financial identity, and upward mobility.
+
+Ridera aims to change this by creating the world’s first **work-backed digital asset layer**, where every hour of effort, every completed delivery, and every kilometer driven becomes part of a transparent, verifiable, and usable financial record.
+
+Our mission is to:
+
+- **Standardize global gig-worker earnings** through SRU (Standardized Revenue Units), enabling equal representation of work across different countries and platforms.  
+- **Give workers ownership of their productivity**, allowing them to build an on-chain work identity that is portable, permanent, and globally recognized.  
+- **Transform real-world labor into a provable digital asset**, creating new opportunities for rewards, micro-finance, insurance, and reputation-based access.  
+- **Empower mobility ecosystems** with transparent, on-chain data that improves fairness, efficiency, and long-term sustainability.  
+- **Build the foundational infrastructure** that connects real economic activity to blockchain systems in a secure, decentralized, and tamper-proof way.
+
+Ridera believes that human labor is the world’s most universal form of value — yet it has never been properly measured, tokenized, or integrated into modern finance.
+
+Our mission is to bring this value on-chain.
+
+By doing so, Ridera creates a future where gig workers have financial visibility, economic empowerment, and digital representation equal to the value they create in the real world.
 
 ---
 
 # 3. The Problem
+# 3. Problem Statement
 
-The global mobility economy faces several systemic issues:
+The global gig and mobility economy is one of the fastest-growing labor sectors in the world, yet it remains one of the most financially underdeveloped. Millions of riders, couriers, and delivery workers generate billions of dollars in economic value every day — but their work is invisible, unverified, and disconnected from modern financial infrastructure.
 
-## 3.1 Closed, Centralized Data  
-Ride-hailing and delivery platforms control all earnings data.  
-External users cannot verify:
+Despite the scale of this workforce, several deep structural problems remain unsolved:
 
-- daily revenue flows  
-- fleet performance  
-- multi-platform income  
-- regional activity patterns  
+### **1. Fragmented and Unverifiable Earnings**
+Gig workers earn across multiple platforms (Uber, Rapido, DoorDash, Zomato, Swiggy, etc.), but there is **no universal standard** to verify or unify their income.  
+This prevents platforms, lenders, insurers, and financial systems from trusting gig-worker earnings.
 
-## 3.2 No Public Participation  
-Millions of drivers generate revenue every day, but:
+### **2. No Global Standard for Work Value**
+A worker earning $20 in the U.S. and a worker earning ₹800 in India may contribute **similar effort**, yet their value is measured differently.  
+There is **no global standard** that normalizes work output across regions, currencies, and platforms.
 
-- no tokenized yield exists  
-- no RWA structure is available  
-- revenue cannot be accessed on-chain  
-- investors cannot participate in mobility yield  
+### **3. Workers Have No Financial Identity**
+Gig workers do not build credit histories, financial profiles, or work identities.  
+Their productivity resets daily, leaving them unable to access:
 
-## 3.3 Fragmented Global Ecosystem  
-Each region uses different platforms, currencies, rules, and payout formats, preventing standardization.
+- Loans  
+- Insurance  
+- Rewards  
+- High-value financial tools  
 
-## 3.4 Lack of Verification Infrastructure  
-There is no global system that validates earnings from:
+Their work produces value, but **no long-term financial benefit**.
 
-- Uber, Lyft, Bolt  
-- DoorDash, Deliveroo, iFood  
-- Grab, Gojek, Foodpanda  
-- Careem, Rappi, Didi  
-- thousands of regional platforms  
+### **4. No Infrastructure to Bring Real Work On-Chain**
+Blockchains excel at representing digital assets, but **real-world work** has never been tokenized in a standardized, verifiable format.  
+Current RWA systems focus on real estate or treasury assets — **not human productivity**.
 
-## 3.5 Untapped RWA Potential  
-Mobility revenue is:
+### **5. Income Data Is Controlled by Platforms**
+Gig platforms hold all worker data but do not provide:
 
-- real  
-- global  
-- high-frequency  
-- demand-driven  
-- recession-resistant  
-- tied to essential economic activity  
+- Transparency  
+- Portability  
+- Verification  
+- Ownership  
 
-Yet no protocol tokenizes it.  
-Ridera is the first to do so.
+Workers cannot carry their performance or earnings history with them.
+
+### **6. Lack of Fair and Transparent Reward Systems**
+Existing reward programs are platform-specific, non-transparent, and often based on arbitrary metrics.  
+There is **no unified system** that rewards workers based on real economic activity.
+
+---
+
+These problems result in:
+
+- Workers being undervalued  
+- Platforms lacking transparent data  
+- Financial institutions unable to trust gig income  
+- Web3 having no reliable connection to real-world work  
+
+The world needs a decentralized infrastructure layer that can **verify**, **standardize**, and **represent human work** as a real, on-chain asset.
+
+Ridera is built to solve exactly this.
 
 ---
 
 # 4. Ridera: The Solution
 
-Ridera introduces a fully standardized, global model for verifying mobility income and transforming it into on-chain yield.
+# 4. Ridera: The Solution
 
-The protocol consists of:
+Ridera introduces the world’s first decentralized infrastructure designed to convert real human work into a standardized, verifiable, and on-chain asset. By transforming fragmented gig-economy earnings into **SRU (Standardized Revenue Units)**, Ridera solves the core problems of visibility, verification, and value for millions of workers worldwide.
 
-- Global Fleet Revenue Proofs (G-FRP)  
-- Ridera Oracle (multi-layer verification engine)  
-- Standardized Revenue Units (SRU)  
-- Yield Vault and distribution layer  
-- Dashboard with full global transparency  
-- Validator network for decentralized verification  
-- $RDR token for staking, governance, and validation  
+Ridera creates a unified framework that brings real-world economic activity onto the blockchain in a secure, transparent, and globally interoperable format.
 
-The result is a universal infrastructure layer that bridges real-world mobility with DeFi.
+---
+
+## **1. Standardizing Global Gig-Worker Earnings**
+
+Ridera transforms unstructured, platform-specific income data into a universally readable and comparable metric.  
+Through the **SRU Engine**, earnings are normalized using:
+
+- Country income indexes  
+- Platform difficulty weights  
+- Working hours and effort  
+- Real-time demand patterns  
+- Verified earning proofs  
+
+This enables a **global standard for work value**, regardless of region or platform.
+
+---
+
+## **2. Verifiable On-Chain Representation of Work**
+
+The **Ridera Oracle** acts as the backbone of trust. It:
+
+- Collects earning proofs from mobility and gig platforms  
+- Validates authenticity and source  
+- Prevents tampering or manipulation  
+- Converts proofs into cryptographic Merkle data  
+- Stores results on-chain for transparency  
+
+This transforms gig work into a **provable digital asset**, accessible across any wallet or ecosystem.
+
+---
+
+## **3. Building Portable Financial Identity for Workers**
+
+Ridera enables gig workers to build a **permanent on-chain work identity**, unlocking:
+
+- Reputation scores based on real work  
+- Platform-agnostic earnings history  
+- Access to fair rewards  
+- Entry into future financial tools (loans, insurance, micro-credit)  
+
+Workers gain **ownership** of their data and performance — something no centralized platform offers today.
+
+---
+
+## **4. Enabling Fair, Transparent Reward Distribution**
+
+Using SRU, Ridera allows ecosystems to distribute rewards based on:
+
+- Verified work  
+- Real earnings  
+- Contribution to the mobility economy  
+
+This eliminates arbitrary platform reward systems and introduces **transparent, fair incentives** powered by blockchain.
+
+---
+
+## **5. Creating a New Class of Real-World Assets: RWW (Real-World Work)**
+
+Traditional RWAs tokenize physical assets like real estate or gold.  
+Ridera tokenizes **human effort** — a universal, measurable, and constantly produced form of value.
+
+SRU becomes:
+
+- A work-backed digital asset  
+- A reliable metric for economic activity  
+- A building block for decentralized finance integrations  
+
+This is a new category of RWA focused entirely on **human productivity**.
+
+---
+
+## **6. Infrastructure for Platforms, Workers, and Financial Systems**
+
+Ridera acts as the global infrastructure layer that:
+
+- Connects gig platforms to blockchain  
+- Provides verified data for financial institutions  
+- Creates trust and transparency across the ecosystem  
+- Enables scalable integration for mobility and delivery apps  
+
+Ridera is not a mobility app — it is the **financial and data layer** powering the future of work.
+
+---
+
+## **7. A Foundation for the Future of Work-Based Finance**
+
+By converting real-world labor into a digital asset, Ridera unlocks:
+
+- Work-backed rewards  
+- Identity-driven financial access  
+- A new marketplace for productivity  
+- A decentralized way to measure and store human effort  
+
+Ridera transforms the gig economy from isolated earnings into a **global, programmable, and interoperable financial system**.
+
+---
+
+Ridera reshapes how work is recognized, valued, and rewarded — creating a fairer and more transparent economic future for millions of gig workers across the world.
 
 ---
 
