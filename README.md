@@ -120,7 +120,6 @@ Ridera introduces the world’s first decentralized infrastructure designed to c
 
 Ridera creates a unified framework that brings real-world economic activity onto the blockchain in a secure, transparent, and globally interoperable format.
 
----
 
 ## **4.1. Standardizing Global Gig-Worker Earnings**
 
@@ -135,7 +134,6 @@ Through the **SRU Engine**, earnings are normalized using:
 
 This enables a **global standard for work value**, regardless of region or platform.
 
----
 
 ## **4.2. Verifiable On-Chain Representation of Work**
 
@@ -149,7 +147,6 @@ The **Ridera Oracle** acts as the backbone of trust. It:
 
 This transforms gig work into a **provable digital asset**, accessible across any wallet or ecosystem.
 
----
 
 ## **4.3. Building Portable Financial Identity for Workers**
 
@@ -162,7 +159,6 @@ Ridera enables gig workers to build a **permanent on-chain work identity**, unlo
 
 Workers gain **ownership** of their data and performance — something no centralized platform offers today.
 
----
 
 ## **4.4. Enabling Fair, Transparent Reward Distribution**
 
@@ -174,7 +170,6 @@ Using SRU, Ridera allows ecosystems to distribute rewards based on:
 
 This eliminates arbitrary platform reward systems and introduces **transparent, fair incentives** powered by blockchain.
 
----
 
 ## **4.5. Creating a New Class of Real-World Assets: RWW (Real-World Work)**
 
@@ -189,7 +184,6 @@ SRU becomes:
 
 This is a new category of RWA focused entirely on **human productivity**.
 
----
 
 ## **4.6. Infrastructure for Platforms, Workers, and Financial Systems**
 
@@ -202,7 +196,6 @@ Ridera acts as the global infrastructure layer that:
 
 Ridera is not a mobility app — it is the **financial and data layer** powering the future of work.
 
----
 
 ## **4.7. A Foundation for the Future of Work-Based Finance**
 
@@ -215,8 +208,6 @@ By converting real-world labor into a digital asset, Ridera unlocks:
 
 Ridera transforms the gig economy from isolated earnings into a **global, programmable, and interoperable financial system**.
 
----
-
 Ridera reshapes how work is recognized, valued, and rewarded — creating a fairer and more transparent economic future for millions of gig workers across the world.
 
 ---
@@ -228,7 +219,6 @@ This system ensures transparency, fairness, and real economic backing for all SR
 
 Below is the complete end-to-end operational flow.
 
----
 
 ## 5.1 Earnings Upload (Worker → Ridera)
 
@@ -245,7 +235,6 @@ All data submitted on the same day forms the **input for one cycle**.
 
 **1 Day = 1 Cycle**
 
----
 
 ## 5.2 Ridera Oracle Verification
 
@@ -262,7 +251,6 @@ Only fully verified proofs are passed to the next stage.
 
 Any invalid or suspicious data is rejected.
 
----
 
 ## 5.3 Cycle Formation (Daily Work Cycle)
 
@@ -278,7 +266,6 @@ A Cycle includes:
 
 Every worker generates **one cycle per day**, regardless of earnings amount.
 
----
 
 ## 5.4 SRU Generation (Standardized Revenue Unit)
 
@@ -294,7 +281,6 @@ SRU is derived from:
 
 This produces a **single SRU value per daily cycle**, representing the worker’s real economic contribution in a standardized, global format.
 
----
 
 ## 5.5 Proof Registry (On-Chain Storage)
 
@@ -311,7 +297,6 @@ This creates a **permanent, tamper-proof record** of each worker’s daily verif
 
 The Proof Registry is the trust layer for the entire system.
 
----
 
 ## 5.6 Yield Vault (Reads SRU Proofs → Generates Rewards)
 
@@ -327,7 +312,6 @@ It determines:
 The Yield Vault does **not** hold worker income.  
 It only uses **SRU output** as the metric to compute protocol-level token emissions.
 
----
 
 ## 5.7 Staking Contract (Final RDR Distribution)
 
@@ -344,7 +328,6 @@ The Staking Contract then distributes:
 Workers do not stake to earn SRU —  
 **SRU drives protocol emissions → emissions reward the stakers.**
 
----
 
 ## 5.8 End-to-End Daily Cycle Summary
 
@@ -368,7 +351,6 @@ SRU enables fair comparison of worker productivity across different countries, p
 
 The SRU Engine operates after earnings data has been verified by the Ridera Oracle and assigned to a daily cycle.
 
----
 
 ## 6.1 Purpose of SRU Standardization
 
@@ -382,7 +364,6 @@ Real-world earnings vary significantly due to:
 Without standardization, raw earnings cannot be used to calculate fair incentives or represent comparable economic activity.  
 SRU resolves this by converting earnings into a single, globally consistent metric that reflects true work contribution.
 
----
 
 ## 6.2 Country Weightage
 
@@ -399,7 +380,6 @@ Examples (illustrative):
 
 This correction ensures that equivalent effort in two regions produces comparable SRU output.
 
----
 
 ## 6.3 Platform Weightage
 
@@ -415,7 +395,6 @@ Examples (illustrative):
 
 This ensures platform-specific payout structures do not distort worker value.
 
----
 
 ## 6.4 Category / Work-Type Weightage
 
@@ -431,7 +410,6 @@ Examples (illustrative):
 
 These multipliers adjust SRU output based on worker behavior and operating conditions.
 
----
 
 ## 6.5 SRU Calculation Formula
 
@@ -441,7 +419,6 @@ After applying all normalization factors, SRU is calculated as:
 
 The formula produces a standardized representation of the worker’s daily productivity.
 
----
 
 ## 6.6 Cycle Formation (Daily Output)
 
@@ -453,7 +430,6 @@ Ridera processes earnings on a daily basis.
 
 Cycles allow the protocol to process and distribute rewards in discrete, consistent periods.
 
----
 
 ## 6.7 Merkle Root Generation and Proof Registry Storage
 
@@ -475,7 +451,6 @@ The **Proof Registry** stores:
 
 This structure ensures immutability, data integrity, and verifiable proof-of-work output without storing all worker data on-chain.
 
----
 
 ## 6.8 Output of the SRU Engine
 
@@ -488,7 +463,6 @@ At the end of each cycle, the SRU Engine delivers the following:
 
 The SRU output serves as the economic foundation for reward distribution across the ecosystem.
 
----
 
 ## 6.9 Beta Phase Notes
 
@@ -501,7 +475,6 @@ During the beta phase:
 
 The system becomes fully automated once Ridera integrates with verified platform APIs.
 
----
 
 ## 6.10 Future Enhancements
 
@@ -522,7 +495,6 @@ These upgrades will further strengthen SRU’s accuracy and reliability as a glo
 The Ridera Oracle is the verification layer responsible for authenticating and validating all gig-worker earnings data submitted to the protocol. It ensures that only legitimate, tamper-proof, and platform-accurate information is used for SRU generation.  
 The Oracle is fundamental to guaranteeing trust, transparency, and integrity within the Ridera ecosystem.
 
----
 
 ## 7.1 Purpose of the Ridera Oracle
 
@@ -538,7 +510,6 @@ The Ridera Oracle solves this by:
 
 This creates a reliable foundation for SRU generation and proof-based reward distribution.
 
----
 
 ## 7.2 Data Ingestion Channels
 
@@ -552,7 +523,6 @@ The Oracle supports multiple data ingestion methods, including:
 
 Every input undergoes the same verification pipeline.
 
----
 
 ## 7.3 Verification Framework
 
@@ -589,8 +559,6 @@ The Oracle evaluates:
 
 This ensures earnings logically match the work performed.
 
----
-
 ## 7.4 Merkle Tree Preparation
 
 Once all data for a cycle is verified, the Oracle prepares:
@@ -600,8 +568,6 @@ Once all data for a cycle is verified, the Oracle prepares:
 - Proof inputs for Merkle hashing  
 
 Each worker’s SRU and earning proof contributes to a leaf node in the Merkle tree generated at cycle finalization.
-
----
 
 ## 7.5 Oracle Output
 
@@ -614,7 +580,6 @@ At the completion of each verification cycle, the Oracle produces:
 
 Only data that passes Oracle verification is allowed into the SRU Engine.
 
----
 
 ## 7.6 Security Considerations
 
@@ -628,7 +593,6 @@ The Oracle ensures systemic security through:
 
 Security remains the top priority since SRU and reward emissions depend directly on verified outputs.
 
----
 
 ## 7.7 Future Enhancements
 
@@ -642,7 +606,6 @@ Future versions of the Ridera Oracle will support:
 
 These upgrades will enhance accuracy, reduce manual submissions, and increase resistance to manipulation.
 
----
 
 ## 7.8 Role in the Ridera Ecosystem
 
@@ -666,7 +629,6 @@ Instead of storing raw data on-chain, Ridera uses a Merkle-based structure to en
 
 The Proof Registry serves as the single source of truth for the Yield Vault and all downstream integrations.
 
----
 
 ## 8.1 Purpose of the Proof Registry
 
@@ -680,7 +642,6 @@ The Proof Registry exists to:
 
 This allows Ridera to authenticate real-world productivity in a trustless, on-chain manner.
 
----
 
 ## 8.2 Why Merkle Trees Are Used
 
@@ -700,7 +661,6 @@ Advantages:
 
 This design ensures the Proof Registry can scale to millions of daily submissions.
 
----
 
 ## 8.3 Structure of a Proof Registry Entry
 
@@ -716,7 +676,6 @@ A registry entry contains:
 Only the root and summary values are stored on-chain.  
 Individual SRU values remain off-chain but can always be verified against the Merkle tree.
 
----
 
 ## 8.4 Data Flow to the Proof Registry
 
@@ -731,7 +690,6 @@ The pipeline follows this order:
 
 This ensures a transparent and consistent validation process.
 
----
 
 ## 8.5 Integrity and Verification
 
@@ -743,7 +701,6 @@ Any stakeholder (worker, auditor, partner platform, or contract) can verify a wo
 
 This allows trustless verification without exposing personal data.
 
----
 
 ## 8.6 Interaction with the Yield Vault
 
@@ -757,7 +714,6 @@ For each cycle, the Yield Vault uses:
 
 The registry ensures that no rewards are issued for unverified or manipulated data.
 
----
 
 ## 8.7 Security Considerations
 
@@ -771,7 +727,6 @@ The Proof Registry ensures system integrity through:
 
 Any attempt to alter past productivity records becomes computationally infeasible.
 
----
 
 ## 8.8 Future Enhancements
 
@@ -785,7 +740,7 @@ Future versions of the Proof Registry will support:
 
 These upgrades will extend the Proof Registry into a universal proof-of-labor infrastructure layer for the global gig economy.
 
-
+---
 
 # 9. Yield Vault
 
@@ -794,8 +749,6 @@ It reads finalized cycle data from the Proof Registry and calculates the daily R
 
 The Yield Vault does not store or manage worker income.  
 Its role is limited to interpreting SRU outputs and determining fair, transparent, and economically aligned reward distributions.
-
----
 
 ## 9.1 Purpose of the Yield Vault
 
@@ -809,7 +762,6 @@ The Yield Vault provides a decentralized, rules-based mechanism to:
 
 It ensures that the protocol distributes tokens only when real economic output is recorded.
 
----
 
 ## 9.2 Input Source: Proof Registry
 
@@ -822,7 +774,6 @@ For every daily work cycle, the Yield Vault reads the following data from the Pr
 
 The vault never reads raw earnings data; it relies solely on validated SRU computations.
 
----
 
 ## 9.3 Emission Logic
 
@@ -835,7 +786,6 @@ The Yield Vault determines the daily RDR emissions using:
 
 This ensures emission amounts remain predictable, fair, and aligned with long-term tokenomics.
 
----
 
 ## 9.4 Worker-Level Reward Calculation
 
@@ -847,7 +797,6 @@ Worker reward share is based on:
 
 The Yield Vault uses the Merkle Root to validate each worker’s proof-of-work contribution before including their share in the final distribution.
 
----
 
 ## 9.5 Interaction with the Staking Contract
 
@@ -860,7 +809,6 @@ After computing the daily emissions, the Yield Vault:
 
 Staking ensures that RDR distribution flows to long-term ecosystem participants.
 
----
 
 ## 9.6 Preventing Invalid Reward Issuance
 
@@ -874,7 +822,6 @@ The Yield Vault incorporates several safety checks:
 
 This guarantees that reward issuance cannot be manipulated.
 
----
 
 ## 9.7 Emission Transparency
 
@@ -888,7 +835,6 @@ For each cycle, the Yield Vault publishes:
 
 This data provides full transparency for auditors and ecosystem partners.
 
----
 
 ## 9.8 Future Enhancements
 
@@ -902,7 +848,6 @@ Planned upgrades to the Yield Vault include:
 
 As Ridera scales, the Yield Vault will become a core component of work-based DeFi infrastructure.
 
----
 
 ## 9.9 Role in the Ridera Ecosystem
 
@@ -914,6 +859,7 @@ The Yield Vault serves as the economic link between:
 
 It ties Ridera’s RWA model to a sustainable, measurable, verifiable distribution mechanism that rewards both workers and long-term participants.
 
+---
 
 # 10. Staking System & Token Utility
 
@@ -923,7 +869,6 @@ The staking system functions as the bridge between protocol-level incentives and
 
 RDR (Ridera Token) powers governance, rewards, and future economic utilities across the infrastructure.
 
----
 
 ## 10.1 Purpose of the Staking System
 
@@ -937,7 +882,6 @@ The staking system serves several critical roles:
 
 Staking ensures that RDR distribution is economically meaningful and backed by real-world output.
 
----
 
 ## 10.2 Interaction with the Yield Vault
 
@@ -951,7 +895,6 @@ The flow is as follows:
 
 This creates a measurable, transparent reward flow tied directly to verified work cycles.
 
----
 
 ## 10.3 Reward Distribution Model
 
@@ -967,7 +910,6 @@ This ensures that:
 
 The model remains sustainable across all scaling stages of Ridera.
 
----
 
 ## 10.4 Lock Options and Multipliers (Optional)
 
@@ -979,7 +921,6 @@ Future iterations of the protocol may include optional staking enhancements:
 
 These upgrades incentivize deeper engagement from long-term participants.
 
----
 
 ## 10.5 RDR Token Utility
 
@@ -1022,7 +963,6 @@ The token may be used for:
 
 This extends RDR into the broader Web3 ecosystem.
 
----
 
 ## 10.6 Long-Term Economic Alignment
 
@@ -1035,7 +975,6 @@ The staking system ensures:
 
 The mechanism transforms Ridera into a sustainable, work-driven economic ecosystem.
 
----
 
 ## 10.7 Role of Staking in the Ridera Ecosystem
 
@@ -1050,6 +989,7 @@ Together, these modules form a cohesive RWA infrastructure backed by real-world 
 
 RDR sits at the center of this system—serving as the incentive token, governance medium, and native economic asset for the Ridera protocol.
 
+---
 
 # 11. Architecture Overview
 
@@ -1066,7 +1006,6 @@ The protocol is composed of five core layers:
 
 Together, these layers form the foundational infrastructure for Ridera’s Real-World Work (RWW) tokenization ecosystem.
 
----
 
 ## 11.1 High-Level Architecture Flow
 
@@ -1084,7 +1023,6 @@ The end-to-end flow of data and value across Ridera operates as follows:
 
 This structured pipeline ensures clear separation of responsibility and secure data flow.
 
----
 
 ## 11.2 Core Modules
 
@@ -1113,13 +1051,12 @@ This structured pipeline ensures clear separation of responsibility and secure d
 - Computes protocol-level RDR rewards  
 - Sends reward distributions to the staking system  
 
----
 
 ## 11.3 Component Interaction Diagram (Text Representation)
 
 Below is a structured text-based representation of how components interact:
 
-
+---
 
 # 12. Economic Model
 
@@ -1128,7 +1065,6 @@ Unlike traditional reward systems that rely on synthetic metrics or arbitrary em
 
 The model ensures long-term sustainability by tightly integrating economic incentives with actual economic activity generated across global gig platforms.
 
----
 
 ## 12.1 Core Principles
 
@@ -1152,7 +1088,6 @@ Ridera does **not** pool or redistribute earnings.
 
 Rewards are generated solely from the token emission model—keeping regulatory design clean and safe.
 
----
 
 ## 12.2 Economic Components
 
@@ -1165,7 +1100,6 @@ Ridera’s economic architecture relies on four interacting components:
 
 These components link real-world productivity with on-chain incentives.
 
----
 
 ## 12.3 SRU-Driven Emission Framework
 
@@ -1187,7 +1121,6 @@ Where:
 
 This ensures emissions scale proportionally with actual economic activity.
 
----
 
 ## 12.4 Supply Stability and Sustainability
 
@@ -1201,8 +1134,6 @@ Token emissions may gradually decrease over time, ensuring long-term sustainabil
 
 ### **12.4.3 Staking Sink**
 Staking removes circulating tokens from the market, reducing token velocity and stabilizing price dynamics.
-
----
 
 ## 12.5 Reward Distribution Model
 
@@ -1227,7 +1158,6 @@ Stakers receive direct RDR emissions.
 
 **stakerReward = (stakerStake / totalStaked) × dailyEmission**
 
----
 
 ## 12.6 Long-Term Ecosystem Alignment
 
@@ -1245,7 +1175,6 @@ Gain access to transparent work insights → Enhance platform fairness.
 ### **Protocol**  
 Maintains sustainable growth backed by real-world work outputs.
 
----
 
 ## 12.7 Avoiding Ponzi-like Structures
 
@@ -1259,7 +1188,6 @@ Ridera’s model avoids unsustainable patterns through:
 
 This creates a clean and regulatory-safe economic foundation.
 
----
 
 ## 12.8 Future Economic Extensions
 
@@ -1273,15 +1201,13 @@ Upcoming enhancements may include:
 
 These upgrades further extend Ridera’s role as the core economic infrastructure for the work-based RWA economy.
 
-
-
 ---
+
 # 13. Base Chain Integration
 
 Ridera is deployed natively on **Base**, an Ethereum Layer-2 network developed with Coinbase.  
 Base provides the ideal environment for Ridera’s high-frequency, data-driven RWA system, ensuring low-cost execution, global accessibility, and secure on-chain infrastructure.
 
----
 
 ## 13.1 Why Ridera Uses Base
 
@@ -1295,7 +1221,6 @@ Ridera requires a blockchain capable of handling:
 
 Base is uniquely suited for these requirements.
 
----
 
 ## 13.2 Key Advantages of Base for Ridera
 
@@ -1309,7 +1234,6 @@ Base provides:
 
 This makes SRU cycle finalization practical at global scale.
 
----
 
 ## 13.3.2 Scalability for Micro-Yield Cycles
 
@@ -1320,7 +1244,6 @@ Base’s scalable L2 architecture ensures:
 - Predictable performance  
 - Efficient on-chain registry updates  
 
----
 
 ## 13.3.3 Global Accessibility
 
@@ -1331,7 +1254,6 @@ Workers and stakers across all regions can interact with Ridera without:
 - Geographic limitations  
 - Complex onboarding  
 
----
 
 ## 13.3.4 Coinbase-Secured Infrastructure
 
@@ -1344,7 +1266,6 @@ Base benefits from:
 
 This aligns with Ridera’s long-term vision of building a trusted, real-world financial infrastructure.
 
----
 
 ## 13.3.5 Developer Ecosystem and Interoperability
 
@@ -1362,7 +1283,6 @@ This accelerates Ridera’s ability to integrate:
 - Advanced SRU automation  
 - DeFi extensions for RDR utility  
 
----
 
 ## 13.4 Role of Base in Ridera’s Architecture
 
@@ -1375,7 +1295,6 @@ Base acts as the primary settlement and verification layer for:
 
 All on-chain operations critical to Ridera’s RWA model rely on Base’s scalable execution environment.
 
----
 
 ## 13.5 Future Expansion
 
@@ -1388,6 +1307,8 @@ While Ridera is native to Base, future cross-chain extensions may include:
 
 Base remains the anchor for Ridera’s core infrastructure due to its reliability and scalability.
 
+---
+
 # 14. Partner Integrations
 
 Partner integrations play a crucial role in scaling Ridera’s Real-World Work (RWW) ecosystem.  
@@ -1395,7 +1316,6 @@ By connecting gig platforms, mobility networks, financial institutions, and veri
 
 Integrations enable automated data ingestion, improved verification accuracy, ecosystem incentives, and seamless adoption for both workers and enterprises.
 
----
 
 ## 14.1 Integration Categories
 
@@ -1408,7 +1328,6 @@ Ridera’s partner integrations are divided into four primary categories:
 
 Each category expands the utility and reach of SRU and RDR.
 
----
 
 ## 14.2 Gig & Mobility Platform Integration
 
@@ -1429,7 +1348,6 @@ These integrations will enable:
 
 Once fully integrated, Ridera becomes an invisible backend infrastructure for the gig economy.
 
----
 
 ## 14.3 Financial Institution Integration
 
@@ -1448,7 +1366,6 @@ Benefits include:
 - Verified work identity for loan approvals  
 - SRU-based financial services in future phases  
 
----
 
 ## 14.4 Data Verification & Compliance Partners
 
@@ -1462,7 +1379,6 @@ To maintain accuracy and security, Ridera integrates with:
 
 This strengthens the Oracle’s ability to validate real-world work.
 
----
 
 ## 14.5 DeFi & Ecosystem Integrations
 
@@ -1476,7 +1392,6 @@ Ridera’s SRU and RDR tokens can integrate with external DeFi ecosystems for:
 
 These integrations extend Ridera beyond mobility and into the broader on-chain economy.
 
----
 
 ## 14.6 Benefits for Partners
 
@@ -1496,7 +1411,6 @@ Ridera delivers measurable value to partners:
 - Access to a new asset class (Real-World Work)  
 - Stable emission flows tied to human productivity  
 
----
 
 ## 14.7 Integration Roadmap
 
@@ -1520,7 +1434,6 @@ Ridera will implement integrations in three stages:
 Ridera evolves into the universal income layer for all mobility and gig-economy partners.
 
 
-
 ---
 
 # 15. Core Components
@@ -1529,7 +1442,6 @@ Ridera is built on a modular and interoperable architecture where each component
 Together, these components ensure secure data flow, verifiable work proofs, accurate SRU computation, and fair reward distribution.  
 This section outlines the core functional modules that power the Ridera protocol.
 
----
 
 ## 15.1 Ridera Oracle (Verification Layer)
 
@@ -1545,7 +1457,6 @@ Key functions:
 
 The Oracle ensures that **only real, authenticated earnings** enter the SRU Engine.
 
----
 
 ## 15.2 SRU Engine (Standardization Layer)
 
@@ -1561,7 +1472,6 @@ Core responsibilities:
 
 SRU is the fundamental unit representing standardized, verifiable human productivity.
 
----
 
 ## 15.3 Proof Registry (On-Chain Proof Layer)
 
@@ -1576,7 +1486,6 @@ Core responsibilities:
 
 The Registry provides the **source of truth** for all reward calculations.
 
----
 
 ## 15.4 Yield Vault (Reward Computation Layer)
 
@@ -1592,7 +1501,6 @@ Primary functions:
 
 The Yield Vault ensures emissions align with actual economic activity.
 
----
 
 ## 15.5 Staking Contract (Reward Distribution Layer)
 
@@ -1607,7 +1515,6 @@ Key roles:
 
 Stakers secure the protocol and receive rewards tied to real-world productivity.
 
----
 
 ## 15.6 Worker Portal (Submission Interface)
 
@@ -1622,7 +1529,6 @@ Responsibilities:
 
 The portal acts as the gateway between workers and the Ridera ecosystem.
 
----
 
 ## 15.7 Integration APIs (Partner Interface)
 
@@ -1637,7 +1543,6 @@ API use cases:
 
 This layer expands Ridera into a global gig-economy infrastructure network.
 
----
 
 ## 15.8 RDR Token (Incentive & Governance Layer)
 
@@ -1651,7 +1556,6 @@ RDR is the native token powering:
 
 RDR binds all components into a coherent economic system backed by real-world output.
 
----
 
 ## 15.9 End-to-End Component Interaction Summary
 
@@ -1665,7 +1569,6 @@ RDR binds all components into a coherent economic system backed by real-world ou
 
 These components operate together to form the world’s first **work-backed RWA infrastructure**.
 
-
 ---
 
 # # 16. The RWA Model
@@ -1675,7 +1578,6 @@ Unlike traditional RWA systems that tokenize physical assets such as real estate
 
 By converting verified gig-worker earnings into standardized on-chain units (SRU), Ridera transforms decentralized labor output into a verifiable, programmable, and interoperable digital asset class.
 
----
 
 ## 16.1 Limitations of Traditional RWAs
 
@@ -1691,7 +1593,6 @@ They represent static value, not *dynamic* economic activity.
 
 Ridera introduces a more scalable, fluid model by tokenizing **work**, not **assets**.
 
----
 
 ## 16.2 Introduction to Real-World Work (RWW)
 
@@ -1714,7 +1615,6 @@ RWW models enable:
 
 This makes RWW fundamentally more scalable than traditional RWAs.
 
----
 
 ## 16.3 Why Gig Work Is an Ideal RWA
 
@@ -1728,7 +1628,6 @@ Gig work possesses characteristics that make it uniquely suitable for RWA tokeni
 
 These attributes allow Ridera to build an automated, proof-based RWA layer around real-world economic activity.
 
----
 
 ## 16.4 SRU as a Work-Backed Digital Asset
 
@@ -1749,7 +1648,6 @@ SRU is not a synthetic point—it is:
 - A normalized representation of economic contribution  
 - A verifiable dataset for financial systems  
 
----
 
 ## 16.5 Proof Registry as the RWA Anchor
 
@@ -1762,7 +1660,6 @@ The Proof Registry acts as the foundational anchor for Ridera’s RWA system by:
 
 This provides an immutable, trustless record of work, similar to how traditional RWAs maintain ownership records.
 
----
 
 ## 16.6 Reward Generation Based on Real Work
 
@@ -1777,7 +1674,6 @@ This aligns the token economy with real-world productivity rather than speculati
 
 It establishes Ridera as a **utility-driven RWA protocol** rather than a yield-bearing financial product.
 
----
 
 ## 16.7 Advantages of the RWW RWA Model
 
@@ -1798,7 +1694,6 @@ Ridera does not pool user money or offer yield from real earnings.
 ### **16.7.5 Strong Partner Utility**
 Platforms and institutions gain access to verified labor data.
 
----
 
 ## 16.8 Positioning Ridera in the RWA Landscape
 
@@ -1815,14 +1710,11 @@ Ridera is not only an RWA protocol—but the foundation of a new economic catego
 
 
 
----
-
 # 17. Roadmap
 
 Ridera’s roadmap is structured across multiple development phases beginning in Q3 2025.  
 Each phase builds toward a fully automated, integrated, and globally scalable Real-World Work (RWW) infrastructure.
 
----
 
 # 17.1 Phase 1 — Research & Foundation (Q3 2025)
 
@@ -1850,7 +1742,6 @@ Each phase builds toward a fully automated, integrated, and globally scalable Re
 
 This phase establishes the conceptual & technical foundation for Ridera.
 
----
 
 # 17.2 Phase 2 — Alpha Development (Q4 2025)
 
@@ -1880,7 +1771,6 @@ This phase establishes the conceptual & technical foundation for Ridera.
 
 This phase validates Ridera’s core components internally and with select testers.
 
----
 
 # 17.3 Phase 3 — Beta Launch (Q1 2026)
 
@@ -1909,7 +1799,6 @@ This phase validates Ridera’s core components internally and with select teste
 
 This phase focuses on live testing, data calibration, and user onboarding.
 
----
 
 # 17.4 Phase 4 — Public Launch (Q2 2026)
 
@@ -1934,7 +1823,6 @@ This phase focuses on live testing, data calibration, and user onboarding.
 
 Ridera becomes fully operational on Base mainnet.
 
----
 
 # 17.5 Phase 5 — Automation & Integrations (Q3–Q4 2026)
 
@@ -1959,7 +1847,6 @@ Ridera becomes fully operational on Base mainnet.
 
 This phase reduces manual submissions and expands ecosystem reach.
 
----
 
 # 17.6 Phase 6 — Financial Layer Expansion (2027)
 
@@ -1982,14 +1869,13 @@ This phase reduces manual submissions and expands ecosystem reach.
 
 This phase transforms Ridera into a global work-based financial network.
 
-
+---
 
 # 18. Glossary
 
 This glossary provides clear definitions for core concepts, components, and terminology used throughout the Ridera protocol.  
 It serves as a reference for readers, developers, partners, and contributors working with Ridera’s Real-World Work (RWW) infrastructure.
 
----
 
 ## 18.1 Standardized Revenue Unit (SRU)
 
@@ -1998,7 +1884,6 @@ It represents a standardized, normalized, and verified measure of gig-worker ear
 
 SRU ensures fair comparison of work value globally.
 
----
 
 ## 18.2 Cycle
 
@@ -2012,7 +1897,6 @@ Each cycle generates:
 
 Cycles form the basis for reward computation and verifiable on-chain proof.
 
----
 
 ## 18.3 Ridera Oracle
 
@@ -2026,7 +1910,6 @@ It performs:
 
 Only verified data enters the SRU Engine.
 
----
 
 ## 18.4 SRU Engine
 
@@ -2038,7 +1921,6 @@ The standardization layer that converts verified earnings into SRU using:
 
 It produces final SRU values and prepares Merkle Tree inputs.
 
----
 
 ## 18.5 Proof Registry
 
@@ -2051,7 +1933,6 @@ The on-chain storage layer that records:
 
 It acts as the immutable source of truth for all verified work cycles.
 
----
 
 ## 18.6 Yield Vault
 
@@ -2063,7 +1944,6 @@ The reward computation engine that:
 
 It transforms SRU activity into protocol-level token incentives.
 
----
 
 ## 18.7 Staking Contract
 
@@ -2075,7 +1955,6 @@ The module responsible for:
 
 It aligns long-term participants with protocol growth.
 
----
 
 ## 18.8 RDR Token
 
@@ -2089,7 +1968,6 @@ The native token of Ridera, used for:
 
 RDR connects economic activity, governance, and incentives across the protocol.
 
----
 
 ## 18.9 Merkle Root
 
@@ -2102,7 +1980,6 @@ It allows:
 
 It is a core element of Ridera’s verifiable work-proof architecture.
 
----
 
 ## 18.10 Real-World Work (RWW)
 
@@ -2111,7 +1988,6 @@ RWW tokenizes **human productivity** instead of physical assets.
 
 Work becomes a measurable, verifiable, and valuable digital asset.
 
----
 
 ## 18.11 Earnings Proof
 
@@ -2125,7 +2001,6 @@ Examples include:
 
 These proofs are validated by the Ridera Oracle.
 
----
 
 ## 18.12 Weight Multipliers
 
@@ -2137,7 +2012,6 @@ Normalization factors applied by the SRU Engine:
 
 These ensure fair representation of work across different conditions.
 
----
 
 ## 18.13 Base Chain
 
@@ -2151,14 +2025,12 @@ Base provides:
 
 It serves as the primary settlement layer for Ridera.
 
----
 
 ## 18.14 Real-World Asset (RWA)
 
 A blockchain category where real-world economic value is represented digitally.  
 Ridera is an RWA protocol focused on **work**, not real estate or commodities.
 
----
 
 ## 18.15 Worker Portal
 
@@ -2171,14 +2043,12 @@ The interface workers use to:
 
 It is the entry point for gig workers into the Ridera ecosystem.
 
----
 
 ## 18.16 Emission
 
 The daily release of RDR tokens distributed to stakers.  
 Emissions are tied directly to totalSRU and verified economic activity.
 
----
 
 ## 18.17 TotalSRU
 
@@ -2186,8 +2056,8 @@ The aggregate SRU generated by all workers in a cycle.
 It is used by the Yield Vault to determine daily RDR emission amounts.
 
  
-
 ---
+
 # 19. Full Protocol Summary
 
 Ridera is a decentralized Real-World Work (RWW) infrastructure protocol that transforms gig-worker earnings into standardized, verifiable, and on-chain digital assets.  
@@ -2195,7 +2065,6 @@ It bridges real economic activity—riders, delivery workers, and mobility opera
 
 The protocol enables global income standardization, transparent proof-of-work cycles, and fair token incentives backed by real human productivity.
 
----
 
 # 19.1 Core Idea
 
@@ -2213,7 +2082,6 @@ Ridera captures this value using:
 
 It creates the world’s first **work-based RWA asset class**.
 
----
 
 # 19.2 Protocol Flow Summary
 
@@ -2247,7 +2115,6 @@ The Yield Vault reads cycle data, computes daily emissions, and the Staking Cont
 
 This creates a closed-loop, tamper-proof system that ties **real-world work → on-chain value → reward emission**.
 
----
 
 # 19.3 What Ridera Achieves
 
@@ -2271,7 +2138,6 @@ Every worker builds a persistent on-chain productivity profile.
 ### **Ecosystem Utility**
 Partners access verified workforce data for better decision-making.
 
----
 
 # 19.4 Key Innovations
 
@@ -2290,7 +2156,6 @@ Total SRU drives token emissions—avoiding speculative or arbitrary inflation.
 ### **E. Modular Infrastructure**
 Oracle, SRU Engine, Proof Registry, Yield Vault, and Staking work independently yet seamlessly.
 
----
 
 # 19.5 Economic Alignment
 
@@ -2308,7 +2173,6 @@ Gain access to transparent and standardized workforce data.
 ### **Protocol**
 Maintains sustainable, real-activity-backed token emissions.
 
----
 
 # 19.6 Role of Base Chain
 
@@ -2321,7 +2185,6 @@ Ridera is deployed on Base due to:
 
 Base acts as the settlement layer for Ridera’s proof and reward infrastructure.
 
----
 
 # 19.7 Strategic Vision
 
@@ -2335,7 +2198,6 @@ Ridera evolves from:
 
 Long term, Ridera becomes the universal bridge for connecting human work to digital finance.
 
----
 
 # 19.8 Summary Statement
 
@@ -2344,19 +2206,18 @@ It transforms the fragmented gig economy into a transparent, on-chain, financial
 
 Ridera is not simply a protocol—it is the infrastructure for a new economic category where **work becomes an asset**, SRU becomes the measure, and RDR becomes the reward layer for the global workforce.
 
+---
 
 # 20. User Journey
 
 The Ridera User Journey outlines how individuals interact with the protocol, including gig workers who generate SRU through verified earnings and stakers who support the network and receive RDR rewards.  
 This section provides a step-by-step view of how Ridera functions from a user perspective.
 
----
 
 # 20.1 Worker Journey (Gig Worker)
 
 The worker journey represents how a gig worker contributes real-world productivity to the Ridera protocol and builds verifiable work identity through SRU cycles.
 
----
 
 ## 20.1.1 Step 1 — Account Registration
 The worker creates an account on the Ridera platform, providing:
@@ -2366,7 +2227,6 @@ The worker creates an account on the Ridera platform, providing:
 
 This initializes the worker’s identity within the protocol.
 
----
 
 ## 20.1.2 Step 2 — Earnings Submission
 Each day, the worker uploads proof of earnings via:
@@ -2380,7 +2240,6 @@ In future phases:
 - API integrations with gig platforms  
 will eliminate manual input.
 
----
 
 ## 20.1.3 Step 3 — Oracle Verification
 The Ridera Oracle validates all submitted evidence through:
@@ -2392,7 +2251,6 @@ The Ridera Oracle validates all submitted evidence through:
 
 Only verified proofs move forward.
 
----
 
 ## 20.1.4 Step 4 — Cycle Creation
 Each 24-hour period forms a **Cycle**.  
@@ -2405,7 +2263,6 @@ For every cycle, the protocol groups:
 
 This cycle becomes a standardized representation of the worker’s daily productivity.
 
----
 
 ## 20.1.5 Step 5 — SRU Generation
 The SRU Engine computes the worker’s standardized output using:
@@ -2417,7 +2274,6 @@ The SRU Engine computes the worker’s standardized output using:
 
 This creates a fair, globally comparable productivity score.
 
----
 
 ## 20.1.6 Step 6 — On-Chain Proof Storage
 The worker’s SRU value becomes part of a Merkle Tree, which generates:
@@ -2427,7 +2283,7 @@ The worker’s SRU value becomes part of a Merkle Tree, which generates:
 
 The Proof Registry stores these on-chain, creating permanent proof of verified work.
 
----
+
 
 ## 20.1.7 Step 7 — Building Work Identity
 Over time, each worker accumulates:
@@ -2441,19 +2297,16 @@ This forms the foundation for future:
 - Gig platform incentives  
 - Financial inclusion tools  
 
----
 
 # 20.2 Staker Journey (RDR Token Holder)
 
 Stakers support Ridera’s long-term stability and receive daily RDR rewards tied to real-world productivity.
 
----
 
 ## 20.2.1 Step 1 — Staking RDR
 A staker deposits RDR into the staking contract on Base.  
 This locks their tokens and registers them for reward eligibility.
 
----
 
 ## 20.2.2 Step 2 — Yield Vault Reads SRU Data
 Each day:
@@ -2461,7 +2314,6 @@ Each day:
 - Computes daily RDR emissions  
 - Sends reward allocation instructions to the staking contract  
 
----
 
 ## 20.2.3 Step 3 — Reward Distribution
 The staking contract distributes rewards proportionally:
@@ -2470,7 +2322,6 @@ The staking contract distributes rewards proportionally:
 
 Stakers receive rewards derived from the ecosystem’s real-work productivity.
 
----
 
 ## 20.2.4 Step 4 — Claiming Rewards
 Stakers can claim RDR at any time through:
@@ -2479,7 +2330,6 @@ Stakers can claim RDR at any time through:
 
 Rewards accumulate daily based on protocol activity.
 
----
 
 ## 20.2.5 Step 5 — Long-Term Participation
 Stakers may:
@@ -2490,7 +2340,6 @@ Stakers may:
 
 This strengthens Ridera’s economic stability.
 
----
 
 # 20.3 Summary: Combined User Experience
 
@@ -2502,7 +2351,7 @@ Stake RDR → Earn rewards → Support protocol → Benefit from global real-wor
 
 Together, both user groups drive Ridera’s unique RWA model where **human productivity becomes a tokenized, verifiable, and incentivized digital asset class.**
 
-
+---
 
 # 21. Conclusion
 
@@ -2526,6 +2375,33 @@ It is the foundation for a global economic system where **work becomes an asset*
 
 The future of RWA is not only in tokenizing assets—  
 It is in unlocking the value of **human effort**, and Ridera is the first step toward that transformation.
+
+# 22.2 Architecture Summary
+
+### **Data Flow**
+Worker → Oracle → SRU Engine → Merkle Tree → Proof Registry → Yield Vault → Staking → Rewards.
+
+### **Verification Flow**
+Oracle ensures authenticity before any data reaches SRU Engine.
+
+### **On-Chain Proof Flow**
+Proof Registry stores only cryptographic summaries (Merkle Roots), ensuring high scalability.
+
+### **Reward Flow**
+Total SRU drives daily RDR emissions, ensuring rewards map to real-world productivity.
+
+
+# 22.3 Closing Note
+
+This architecture illustrates Ridera’s end-to-end decentralized system that links real-world gig work to on-chain economic value through:
+
+- Verified proofs  
+- Standardized SRU metrics  
+- Transparent proof-of-work cycles  
+- A secure and automated reward distribution engine  
+
+This completes the visual and structural representation of the Ridera protocol.
+
 
 
 
@@ -2601,33 +2477,6 @@ It is in unlocking the value of **human effort**, and Ridera is the first step t
              │      (Stakers, Partners, Ecosystem)       │
              └──────────────────────────────────────────┘
 
----
 
-# 22.2 Architecture Summary
-
-### **Data Flow**
-Worker → Oracle → SRU Engine → Merkle Tree → Proof Registry → Yield Vault → Staking → Rewards.
-
-### **Verification Flow**
-Oracle ensures authenticity before any data reaches SRU Engine.
-
-### **On-Chain Proof Flow**
-Proof Registry stores only cryptographic summaries (Merkle Roots), ensuring high scalability.
-
-### **Reward Flow**
-Total SRU drives daily RDR emissions, ensuring rewards map to real-world productivity.
-
----
-
-# 22.3 Closing Note
-
-This architecture illustrates Ridera’s end-to-end decentralized system that links real-world gig work to on-chain economic value through:
-
-- Verified proofs  
-- Standardized SRU metrics  
-- Transparent proof-of-work cycles  
-- A secure and automated reward distribution engine  
-
-This completes the visual and structural representation of the Ridera protocol.
 
 
