@@ -34,8 +34,6 @@ This is the future of work-based finance — and Ridera is building the foundati
 
 # 2. Mission
 
-# 2. Mission
-
 Ridera’s mission is to redefine how human work is measured, valued, and connected to the global financial system.
 
 Today, millions of gig and mobility workers generate real economic value through their daily labor, yet their contributions remain undervalued, unrecorded, and financially inaccessible. Income is fragmented across platforms, difficult to verify, and offers no long-term benefit beyond daily earnings. As a result, workers lack access to credit, stable rewards, financial identity, and upward mobility.
@@ -58,22 +56,21 @@ By doing so, Ridera creates a future where gig workers have financial visibility
 
 ---
 
-# 3. The Problem
 # 3. Problem Statement
 
 The global gig and mobility economy is one of the fastest-growing labor sectors in the world, yet it remains one of the most financially underdeveloped. Millions of riders, couriers, and delivery workers generate billions of dollars in economic value every day — but their work is invisible, unverified, and disconnected from modern financial infrastructure.
 
 Despite the scale of this workforce, several deep structural problems remain unsolved:
 
-### **1. Fragmented and Unverifiable Earnings**
+### **3.1. Fragmented and Unverifiable Earnings**
 Gig workers earn across multiple platforms (Uber, Rapido, DoorDash, Zomato, Swiggy, etc.), but there is **no universal standard** to verify or unify their income.  
 This prevents platforms, lenders, insurers, and financial systems from trusting gig-worker earnings.
 
-### **2. No Global Standard for Work Value**
+### **3.2. No Global Standard for Work Value**
 A worker earning $20 in the U.S. and a worker earning ₹800 in India may contribute **similar effort**, yet their value is measured differently.  
 There is **no global standard** that normalizes work output across regions, currencies, and platforms.
 
-### **3. Workers Have No Financial Identity**
+### **3.3. Workers Have No Financial Identity**
 Gig workers do not build credit histories, financial profiles, or work identities.  
 Their productivity resets daily, leaving them unable to access:
 
@@ -84,11 +81,11 @@ Their productivity resets daily, leaving them unable to access:
 
 Their work produces value, but **no long-term financial benefit**.
 
-### **4. No Infrastructure to Bring Real Work On-Chain**
+### **3.4. No Infrastructure to Bring Real Work On-Chain**
 Blockchains excel at representing digital assets, but **real-world work** has never been tokenized in a standardized, verifiable format.  
 Current RWA systems focus on real estate or treasury assets — **not human productivity**.
 
-### **5. Income Data Is Controlled by Platforms**
+### **3.5. Income Data Is Controlled by Platforms**
 Gig platforms hold all worker data but do not provide:
 
 - Transparency  
@@ -98,7 +95,7 @@ Gig platforms hold all worker data but do not provide:
 
 Workers cannot carry their performance or earnings history with them.
 
-### **6. Lack of Fair and Transparent Reward Systems**
+### **3.6. Lack of Fair and Transparent Reward Systems**
 Existing reward programs are platform-specific, non-transparent, and often based on arbitrary metrics.  
 There is **no unified system** that rewards workers based on real economic activity.
 
@@ -119,15 +116,13 @@ Ridera is built to solve exactly this.
 
 # 4. Ridera: The Solution
 
-# 4. Ridera: The Solution
-
 Ridera introduces the world’s first decentralized infrastructure designed to convert real human work into a standardized, verifiable, and on-chain asset. By transforming fragmented gig-economy earnings into **SRU (Standardized Revenue Units)**, Ridera solves the core problems of visibility, verification, and value for millions of workers worldwide.
 
 Ridera creates a unified framework that brings real-world economic activity onto the blockchain in a secure, transparent, and globally interoperable format.
 
 ---
 
-## **1. Standardizing Global Gig-Worker Earnings**
+## **4.1. Standardizing Global Gig-Worker Earnings**
 
 Ridera transforms unstructured, platform-specific income data into a universally readable and comparable metric.  
 Through the **SRU Engine**, earnings are normalized using:
@@ -142,7 +137,7 @@ This enables a **global standard for work value**, regardless of region or platf
 
 ---
 
-## **2. Verifiable On-Chain Representation of Work**
+## **4.2. Verifiable On-Chain Representation of Work**
 
 The **Ridera Oracle** acts as the backbone of trust. It:
 
@@ -156,7 +151,7 @@ This transforms gig work into a **provable digital asset**, accessible across an
 
 ---
 
-## **3. Building Portable Financial Identity for Workers**
+## **4.3. Building Portable Financial Identity for Workers**
 
 Ridera enables gig workers to build a **permanent on-chain work identity**, unlocking:
 
@@ -169,7 +164,7 @@ Workers gain **ownership** of their data and performance — something no centra
 
 ---
 
-## **4. Enabling Fair, Transparent Reward Distribution**
+## **4.4. Enabling Fair, Transparent Reward Distribution**
 
 Using SRU, Ridera allows ecosystems to distribute rewards based on:
 
@@ -181,7 +176,7 @@ This eliminates arbitrary platform reward systems and introduces **transparent, 
 
 ---
 
-## **5. Creating a New Class of Real-World Assets: RWW (Real-World Work)**
+## **4.5. Creating a New Class of Real-World Assets: RWW (Real-World Work)**
 
 Traditional RWAs tokenize physical assets like real estate or gold.  
 Ridera tokenizes **human effort** — a universal, measurable, and constantly produced form of value.
@@ -196,7 +191,7 @@ This is a new category of RWA focused entirely on **human productivity**.
 
 ---
 
-## **6. Infrastructure for Platforms, Workers, and Financial Systems**
+## **4.6. Infrastructure for Platforms, Workers, and Financial Systems**
 
 Ridera acts as the global infrastructure layer that:
 
@@ -209,7 +204,7 @@ Ridera is not a mobility app — it is the **financial and data layer** powering
 
 ---
 
-## **7. A Foundation for the Future of Work-Based Finance**
+## **4.7. A Foundation for the Future of Work-Based Finance**
 
 By converting real-world labor into a digital asset, Ridera unlocks:
 
@@ -228,45 +223,134 @@ Ridera reshapes how work is recognized, valued, and rewarded — creating a fair
 
 # 5. How Ridera Works
 
-Ridera operates through a four-layer flow:
+Ridera transforms the real-world earnings of gig and mobility workers into a standardized, verifiable, and on-chain asset called **SRU (Standardized Revenue Unit)**.  
+The system operates through a decentralized pipeline involving data collection, verification, normalization, conversion, and on-chain representation.
 
-## 5.1 Revenue Submission  
-Drivers and fleets upload earnings via:
+Below is a clear breakdown of how Ridera functions end-to-end.
 
-- platform statements  
-- screenshots (OCR-processed)  
-- multi-platform aggregation  
-- time-synced entries  
+---
 
-## 5.2 Oracle Verification  
-The Ridera Oracle validates earnings using:
+## 5.1 Earnings Data Collection
 
-- timestamp checks  
-- region pattern matching  
-- anomaly detection  
-- ML-based fraud analysis  
-- validator review  
-- reputation scoring  
+Ridera collects cryptographically verifiable earning proofs from:
 
-Verified earnings convert into **Standardized Revenue Units (SRU)**.
+- Ride-hailing platforms  
+- Food delivery apps  
+- Parcel and courier services  
+- Fleet management systems  
+- Third-party mobility providers  
 
-## 5.3 Yield Vault  
-All SRUs flow into the Ridera Yield Vault, which:
+Workers can submit earning proofs through authorized integrations or data sources approved by Ridera.
 
-- aggregates revenue  
-- calculates global yield  
-- distributes proportional rewards  
-- logs on-chain transparency data  
+These proofs include:
+- Completed trips or deliveries  
+- Income reports  
+- Working hours and shifts  
+- Platform-level performance metrics  
 
-## 5.4 Yield Distribution  
-$RDR stakers receive daily yield based on:
+This forms the raw input for SRU generation.
 
-- global SRU volume  
-- region weighting  
-- total staked supply  
-- validator accuracy  
+---
 
-This yield is directly backed by verified mobility income.
+## 5.2 Ridera Oracle Verification
+
+The **Ridera Oracle** is the trust engine that validates all incoming data.
+
+It performs:
+- **Source authentication** (detect fake or edited proofs)  
+- **Timestamp verification**  
+- **Platform signature checks**  
+- **Anti-manipulation filtering**  
+- **Merkle hashing of earnings data**  
+
+Only after full verification is the data considered “real work” eligible for conversion.
+
+---
+
+## 5.3 SRU Standardization Engine
+
+Once verified, Ridera applies its normalization algorithm to convert real earnings into **SRU**.
+
+Normalization factors include:
+- Country economic index  
+- Cost-of-living scales  
+- Platform difficulty score  
+- Demand and supply patterns  
+- Worker effort (hours, distance, trips)  
+
+This ensures that:
+- ₹800 in India  
+- $20 in USA  
+- ₱500 in Philippines  
+
+…can be standardized into a **fair, equal representation of work value**.
+
+---
+
+## 5.4 SRU Conversion & Minting
+
+After normalization, Ridera calculates the **SRU output** for the worker.
+
+The SRU value is then:
+- Generated through a deterministic formula  
+- Linked to the work proof hash  
+- Added to the worker’s on-chain SRU ledger  
+
+SRU represents **verified human productivity**, not speculation.
+
+---
+
+## 5.5 On-Chain Storage & Transparency
+
+All validated work data is stored via:
+- On-chain Merkle roots  
+- Immutable work history  
+- Transparent proof-of-work logs  
+
+This provides:
+- Public verifiability  
+- Zero tampering  
+- Auditable economic activity  
+
+Workers now own a **permanent, portable financial identity**.
+
+---
+
+## 5.6 Reward & Ecosystem Integration
+
+SRU enables multiple protocol-level utilities:
+- Fair reward distribution  
+- Reputation scoring  
+- Eligibility for incentives  
+- Access to partner benefits  
+- Future financial tools (micro-credit, insurance, staking boosts)  
+
+Platforms and DeFi ecosystems can integrate SRU data to build new financial products.
+
+---
+
+## 5.7 Worker Financial Identity Layer
+
+Every worker builds:
+- A verified performance record  
+- A unified earnings profile  
+- A transparent work credibility score  
+
+This identity follows them across platforms, countries, and apps.
+
+---
+
+## 5.8 End-to-End Flow Summary
+
+1. **Worker earns income in real world**  
+2. **Earnings proof submitted**  
+3. **Ridera Oracle verifies authenticity**  
+4. **Normalization engine standardizes value**  
+5. **SRU is generated and stored on-chain**  
+6. **Worker receives rewards + builds identity**  
+
+Ridera turns fragmented daily work into a **global on-chain asset**.
+
 
 ---
 
