@@ -1,311 +1,330 @@
-📘 Ridera Litepaper
-A Real-World Work (RWW) Infrastructure Layer Built on Base
-1. Executive Summary
+# **Ridera Litepaper**  
+### *A Real-World Work (RWW) Infrastructure Layer Built on Base*
 
-The global gig economy generates billions in daily revenue, yet the work produced by millions of riders, drivers, and couriers remains financially invisible—unverified, fragmented, and disconnected from the digital economy.
+---
 
-Ridera bridges this gap.
+# **1. Executive Summary**
 
-Ridera introduces SRU (Standardized Revenue Unit), a globally standardized, verifiable measurement of gig-worker productivity. SRU converts real-world earnings into a fair, comparable on-chain asset backed by cryptographic proofs.
+The global gig economy generates **billions in daily revenue**, yet the work produced by millions of riders, drivers, and couriers remains **financially invisible**—unverified, fragmented, and disconnected from the digital economy.
 
-Ridera is NOT a ride-hailing platform.
-It is the global financial infrastructure layer for mobility and gig-economy income.
+**Ridera bridges this gap.**
 
-Through the Ridera Oracle, SRU Engine, Proof Registry, and Yield Vault, the protocol transforms real-world economic activity into sustainable on-chain rewards, creating the world’s first work-backed RWA model.
+Ridera introduces **SRU (Standardized Revenue Unit)**, a globally standardized, verifiable measurement of gig-worker productivity. SRU converts real-world earnings into a fair, comparable on-chain asset backed by cryptographic proofs.
 
-2. The Problem
+Ridera is **not** a ride-hailing platform.  
+It is the **global financial infrastructure layer** for mobility and gig-economy income.
+
+Through the **Ridera Oracle, SRU Engine, Proof Registry, and Yield Vault**, the protocol transforms real-world economic activity into sustainable on-chain rewards, creating the world’s first **work-backed RWA model**.
+
+---
+
+# **2. The Problem**
 
 Despite billions in economic output, gig workers face severe limitations:
 
-2.1 No Standard for Work Value
+### **2.1 No Standard for Work Value**
+A rider earning **₹800 in India** and one earning **$20 in the US** may put in similar effort — but there is **no global way to compare their work**.
 
-A rider earning ₹800 in India and one earning $20 in the US produce similar effort — but there is no global way to compare their work.
+### **2.2 No Financial Identity**
+Gig workers have **no verifiable income trail**, preventing them from accessing:
 
-2.2 No Financial Identity
+- Loans  
+- Insurance  
+- Rewards  
+- On-chain financial tools  
 
-Gig workers have no verifiable income trail, preventing them from accessing:
-
-Loans
-
-Insurance
-
-Rewards
-
-On-chain financial tools
-
-2.3 Fragmented, Unverifiable Earnings
-
+### **2.3 Fragmented, Unverifiable Earnings**
 Income is scattered across apps like:
 
-Uber
+- Uber / Ola / Rapido  
+- Zomato / Swiggy / DoorDash  
+- Grab / Gojek / Deliveroo  
 
-Rapido
+None provide **portable, verifiable, on-chain records**.
 
-Swiggy
+### **2.4 No Transparent Reward System**
+Platforms offer inconsistent, opaque incentives.  
+There is **no unified, fair model** to reward workers based on real productivity.
 
-DoorDash
+### **2.5 No On-Chain Integration**
+Real work has **never been tokenized** in a standardized way.  
+Most RWA protocols focus on **property and treasuries** — not human productivity.
 
-Grab
+**Ridera exists to solve these core global problems.**
 
-None provide portable, verifiable, on-chain records.
+---
 
-2.4 No Transparent Reward System
-
-Platforms offer inconsistent, opaque incentives.
-There is no unified, fair model to reward workers based on real productivity.
-
-2.5 No On-Chain Integration
-
-Real work has never been tokenized in a standardized way.
-Blockchain RWAs focus only on property and treasuries — not human productivity.
-
-Ridera exists to solve these core global problems.
-
-3. The Ridera Solution
+# **3. The Ridera Solution**
 
 Ridera converts real-world gig-economy earnings into verifiable, standardized, on-chain proof through four core components:
 
-3.1 Ridera Oracle — Verification Layer
+---
 
-The Oracle authenticates all earnings:
+## **3.1 Ridera Oracle — Verification Layer**
 
-Screenshots
+The **Ridera Oracle** authenticates all earnings submitted by workers:
 
-Platform statements
+- Screenshots of platform payouts  
+- Weekly/monthly statements  
+- Delivery or trip logs  
+- Multi-app revenue summaries  
 
-Delivery logs
+It checks:
 
-Multi-app data
+- Timestamps  
+- Platform structure  
+- Metadata & region  
+- Fraud or manipulation patterns  
 
-It checks timestamps, platform structure, metadata, and fraud signals before approving any submission.
+✅ **Only verified real work enters the system.**
 
-Only verified real work enters the system.
+---
 
-3.2 SRU Engine — Standardization Layer
+## **3.2 SRU Engine — Standardization Layer**
 
-SRU turns raw earnings into standardized value by applying:
+The **SRU Engine** converts verified earnings into a standardized value called **SRU (Standardized Revenue Unit)** by applying:
 
-Country economic weights
+- **Country economic weights** (cost of living, average income)  
+- **Platform payout difficulty** (Zomato vs Uber vs DoorDash etc.)  
+- **Work-type multipliers** (full-time, part-time, peak-only)  
 
-Platform payout difficulty
+This allows a rider in India, UAE, Brazil, or USA to be measured on the **same scale of productivity**.
 
-Work-type multipliers
+> **SRU = global work score for human productivity.**
 
-This allows a rider in India, UAE, Brazil, or USA to be measured on the same scale of productivity.
+---
 
-SRU = global work score for humanity.
+## **3.3 Proof Registry — On-Chain Storage Layer**
 
-3.3 Proof Registry — On-Chain Storage
+After verification and standardization, Ridera stores daily work output in the **Proof Registry**, which records:
 
-After verification, Ridera stores:
+- **Merkle Root** of all SRU values for that day  
+- **totalSRU** (total productivity for that cycle)  
+- **Cycle ID + timestamp**  
 
-Merkle Root of all daily SRU
+This creates an **immutable, transparent proof of verified human productivity** on-chain.
 
-totalSRU per day
+---
 
-Cycle timestamp
+## **3.4 Yield Vault — Reward Engine**
 
-This creates immutable, transparent proof of verified human productivity.
+The **Yield Vault** reads **totalSRU** from the Proof Registry and computes the **daily RDR emissions** allocated to stakers.
 
-3.4 Yield Vault — Reward Engine
+- If **more real work** (higher totalSRU) → emissions increase (up to a cap)  
+- If **less real work** → emissions decrease accordingly  
 
-The Yield Vault reads daily totalSRU and computes the RDR emissions for stakers based on real-world work output.
+> **No work = no emissions.  
+> More verified work = stronger, real-backed rewards.**
 
-No work = no emissions.
-More verified work = scaled rewards.
+Ridera links token emissions **directly to real-world labor**, not speculation.
 
-Ridera links token emissions directly to real-world labor.
+---
 
-4. What Is SRU?
+# **4. What Is SRU?**
 
-SRU (Standardized Revenue Unit) is Ridera’s core asset.
+**SRU (Standardized Revenue Unit)** is Ridera’s core measurement unit.
 
-SRU Represents:
+### **SRU Represents:**
 
-Verified earnings
+- Verified earnings from mobility and gig platforms  
+- Standardized across countries and currencies  
+- Normalized across platforms and work types  
+- Adjusted for region-level and platform-level difficulty  
 
-Standardized across countries
+SRU turns **raw income** into a **clean, comparable on-chain value** for every worker.
 
-Normalized across platforms
+### **Why SRU Matters:**
 
-Adjusted for work intensity
+- Creates a **consistent global work metric**  
+- Enables **on-chain financial identity**  
+- Makes gig work **verifiable, programmable, and composable**  
+- Serves as the **foundation for RDR emissions and protocol rewards**  
 
-SRU = a fair measurement of daily human productivity.
+> **SRU is the building block for a new RWA category: Real-World Work (RWW).**
 
-Why SRU Matters:
+---
 
-Creates a consistent global work metric
-
-Enables on-chain financial identity
-
-Makes gig work verifiable and programmable
-
-Serves as the foundation for RDR emissions
-
-SRU is the building block for a new RWA category:
-Real-World Work (RWW).
-
-5. Ridera RWA Model (RWW)
+# **5. Ridera RWA Model (RWW)**
 
 Traditional RWAs tokenize:
 
-Real estate
+- Real estate  
+- Gold and commodities  
+- Treasury bills and bonds  
 
-Gold
+Ridera introduces **Real-World Work (RWW)** — tokenizing human productivity.
 
-Treasury bills
+### **Why Work Is the Ideal RWA Base:**
 
-Ridera introduces Real-World Work (RWW) — tokenizing human productivity.
+- Produced **every single day**  
+- **Stable global demand** (people always travel, eat, deliver, move goods)  
+- **Non-speculative** (backed by real tasks and labor)  
+- Extremely **high frequency** (millions of trips/orders per hour globally)  
+- Exists in **every country** and every city  
 
-Why Work Is the Best RWA:
+**SRU becomes the world’s first work-backed digital asset**, and **RDR** becomes the **reward and value layer** tied to this economic output.
 
-✔ Produced every day
-✔ Stable global demand
-✔ Non-speculative
-✔ Extremely high frequency
-✔ Backed by real effort
-✔ Exists in every country
+> Ridera turns **human effort into a programmable asset class.**
 
-SRU becomes the world’s first work-backed digital asset, and RDR becomes the reward layer tied to this economic output.
+---
 
-Ridera turns human effort into a programmable asset class.
+# **6. Ecosystem Overview**
 
-6. Ecosystem Overview
+Ridera connects **three major participant groups**:
 
-Ridera connects three major participants:
+---
 
-6.1 Workers (Gig Community)
+## **6.1 Workers (Gig & Mobility Community)**
 
-Submit earnings
+- Submit verified earnings  
+- Generate SRU for each work cycle  
+- Build an **on-chain work identity** over time  
+- Unlock access to future tools (credit, insurance, partner rewards)
 
-Build on-chain work identity
+---
 
-Generate SRU
+## **6.2 Stakers (RDR Holders)**
 
-Unlock future credit and integrations
+- Stake RDR into the **staking contract**  
+- Receive daily RDR rewards driven by:
 
-6.2 Stakers (RDR Holders)
+  - totalSRU (global work volume)  
+  - their share of total staked RDR  
 
-Stake RDR
+Stakers are long-term supporters and beneficiaries of Ridera’s growth.
 
-Receive daily rewards
+---
 
-Support protocol security
+## **6.3 Partners & Platforms**
 
-Reward strength increases as totalSRU grows.
+- Mobility and delivery platforms  
+- Fleet operators  
+- Fintech and RWA protocols  
 
-6.3 Partners
+They gain access to:
 
-Mobility apps, fleet operators, fintech institutions integrate to access:
+- Verified workforce data (aggregated & anonymized)  
+- Standardized productivity metrics  
+- New incentive models based on SRU and verified work  
 
-Verified workforce data
+---
 
-Standardized productivity metrics
+# **7. RDR Token Utility**
 
-Fair incentive structures
+**RDR** is the native token of the Ridera protocol.
 
-7. RDR Token Utility
+### **7.1 Staking Rewards**
 
-RDR is the native token that powers the protocol.
+- Users stake RDR  
+- Protocol distributes daily rewards from emissions  
+- Emissions are **backed by SRU**, not arbitrary APR  
 
-7.1 Staking Rewards
+---
 
-RDR stakers receive daily emissions based on:
+### **7.2 Governance (Future Phase)**
 
-totalSRU
+RDR holders may:
 
-stake proportion
+- Vote on protocol upgrades  
+- Vote on SRU weighting and region/platform adjustments  
+- Adjust emission parameters and caps  
 
-7.2 Governance (Future)
+---
 
-RDR holders will vote on:
+### **7.3 Ecosystem Incentives**
 
-SRU multipliers
+RDR can be used to:
 
-Emission parameters
+- Reward early fleets and workers  
+- Incentivize platform integrations  
+- Support cooperative community campaigns  
 
-Oracle rule sets
+---
 
-7.3 Platform Incentives
+### **7.4 Future Work-Backed Finance**
 
-RDR may reward:
+In later phases, RDR and SRU may be used in:
 
-Verified high-performance users
+- Work-backed microcredit  
+- Reputation-based lending  
+- Risk scoring for insurance  
+- DeFi strategies that use SRU as a productivity oracle  
 
-Early adopters
+---
 
-Partner integrations
+# **8. Tokenomics Summary**
 
-7.4 Future Finance
+### **Total Supply: 1,300,000,000 RDRT (Fixed)**
 
-RDR will unlock:
+| **Category**              | **%** | **Amount (RDRT)** | **Vesting**                                      |
+|---------------------------|------:|-------------------:|--------------------------------------------------|
+| **Ecosystem & Growth**    | 34%   | 442,000,000        | 18-month lock, 48-month linear unlock           |
+| **Team**                  | 12%   | 156,000,000        | 12-month lock, 36-month linear unlock           |
+| **Treasury**              | 16%   | 208,000,000        | 24-month full lock                               |
+| **Partnerships & Grants** | 14%   | 182,000,000        | 6-month lock, 12-month linear (includes investors) |
+| **Staking Rewards**       | 10%   | 130,000,000        | Emitted via protocol over time                  |
+| **Community Allocation**  | 11%   | 143,000,000        | 100% TGE (includes beta testers)                |
+| **Public Sale**           | 3%    | 39,000,000         | 100% TGE                                        |
 
-Work-backed microcredit
+- **No future minting**  
+- **No hidden supply**  
+- Emissions are governed and capped by protocol rules.
 
-Insurance scoring
+---
 
-DeFi integrations
+# **9. Roadmap**
 
-8. Tokenomics Summary
-Total Supply: 1,300,000,000 RDRT
-Category	%	Amount	Vesting
-Ecosystem & Growth	34%	442,000,000	18-month lock, 48-month linear
-Team	12%	156,000,000	12-month lock, 36-month linear
-Treasury	16%	208,000,000	24-month full lock
-Partnerships & Grants	14%	182,000,000	6-month lock, 12-month linear (includes investors)
-Staking Rewards	10%	130,000,000	Emission-based
-Community Allocation	11%	143,000,000	100% TGE (includes beta testers)
-Public Sale	3%	39,000,000	100% TGE
+### **Q3 2025 — Foundation & Design**
 
-Fully capped, fixed supply. No inflation beyond emissions.
+- SRU standard finalization  
+- Oracle & Proof Registry architecture  
+- Economic and emission model design  
 
-9. Roadmap
-Q3 2025 — Foundation
+---
 
-SRU framework
+### **Q4 2025 — Alpha Build**
 
-Oracle design
+- Internal worker portal (alpha)  
+- SRU Engine v1 (test mode)  
+- Oracle v1 with manual + rule-based checks  
+- First testnet Proof Registry  
 
-Early architecture
+---
 
-Q4 2025 — Alpha
+### **Q1 2026 — Public Beta**
 
-Worker portal
+- Onboard first real workers in select regions  
+- Oracle v2 with ML-based detection (beta)  
+- Staking live with test emissions  
+- Community feedback and SRU tuning  
 
-SRU Engine v1
+---
 
-Testnet Proof Registry
+### **Q2 2026 — Mainnet Launch**
 
-Q1 2026 — Public Beta
+- Mainnet deployment on **Base**  
+- Proof Registry, Yield Vault, and Staking fully active  
+- Real SRU-driven emissions begin  
 
-Oracle v2
+---
 
-SRU tuning
+### **2026–2027 — Ecosystem Expansion**
 
-Staking live
+- Direct API integrations with platforms  
+- Automated earnings ingestion  
+- Multi-region partnerships  
+- RWW financial products (work-backed credit, insurance scoring, etc.)  
 
-Q2 2026 — Mainnet Launch
+---
 
-Proof Registry on Base
+# **10. Closing Summary**
 
-Yield Vault
+Ridera is building the world’s first **Real-World Work (RWW) infrastructure layer**, turning mobility and gig-work earnings into **verifiable, standardized, on-chain assets**.
 
-RDR emissions start
+- **SRU** becomes the global measurement for verified work.  
+- **RDR** becomes the staking, reward, and governance token.  
+- **Ridera** becomes the financial identity and yield layer for the global gig workforce.
 
-2026–2027 — Expansion
+This is not just another yield protocol.  
+It is a new category of RWA where **human effort itself becomes an asset**—fairly measured, transparently verified, and globally rewarded.
 
-Platform API integrations
-
-Automated ingestion
-
-Work-backed credit tools
-
-10. Closing Summary
-
-Ridera is creating the world’s first work-backed RWA infrastructure, bringing verified human productivity to the blockchain in a standardized, secure, and programmable format.
-
-SRU becomes the global measurement of work.
-RDR becomes the reward and governance layer.
-Ridera becomes the financial identity layer for the global gig economy.
-
-This is the future of work → on-chain.
