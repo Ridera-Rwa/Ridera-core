@@ -1,275 +1,229 @@
-# Ridera Data Flow Architecture
-### (Global Mobility → Oracle → SRU → Vault → Stakers)
-
-This document explains the complete Ridera pipeline from proof ingestion to on-chain yield distribution.  
-It includes full diagrams in **Mermaid (GitHub native)** and **ASCII** formats for maximum compatibility.
+# **Ridera Architecture Overview**  
+### *End-to-End System Architecture for Mobility RWA Protocol*  
+### *Ridera Protocol — Technical Infrastructure Diagram*
 
 ---
 
-# 1. High-Level Overview
+# **1. Introduction**
 
-Ridera processes global mobility earnings through four major layers:
+This page provides a complete architectural view of the **Ridera Protocol**, showing how off-chain verification, standardization, batching, and on-chain settlement interact to convert global mobility income into trustless, on-chain SRU and reward generation.
 
-1. Submission Layer  
-2. Verification Layer (Oracle)  
-3. Standardization Layer (SRU Engine)  
-4. On-Chain Settlement Layer (Base)
+This document is intended for:
+
+- developers  
+- auditors  
+- investors  
+- integration partners  
+
+It includes multiple **Mermaid diagrams** to visualize system flows and trust boundaries.
 
 ---
 
-# 2. High-Level Pipeline Diagram (Mermaid)
+# **2. High-Level Architecture Diagram**
 
-```mermaid
+This is the primary diagram showing the full Ridera pipeline:
+
+```
 flowchart LR
-    A["Driver / Fleet\nSubmit Earnings"]
-        --> B["Submission Layer\n(images, PDFs, logs)"]
 
-    B --> C["Ridera Oracle\nOCR + ML + Rules"]
-    C --> D["Validation Outcome\nValid / Flagged"]
-    D --> E["SRU Engine\nNormalization + Weighting"]
-    E --> F["SRU Batch Builder"]
-    F --> G["Batch Merkle Tree\nRoot Generation"]
-    G --> H["On-Chain Commit\nProofRegistry (Base)"]
-    H --> I["Yield Vault\nSRU Accounting"]
-    I --> J["Staking & Rewards\n$RDR Distribution"]
+A[User Earnings Submission\n(Screenshots / PDFs / Logs)] --> B[Ridera Oracle\nVerification Layer]
+
+B --> C[SRU Engine\nStandardization Layer]
+
+C --> D[Batcher & Merkle Generator]
+
+D --> E[Proof Registry (Base)\nOn-Chain Commitment]
+
+E --> F[Yield Vault (Base)\nEmission Engine]
+
+F --> G[Staking Contract\nReward Distribution]
+
+G --> H[Stakers Receive $RDR\nReal-World Yield]
 ```
 
 ---
 
-# 3. Quick ASCII Overview (for docs that don't render diagrams)
+# **3. Off-Chain Architecture Diagram**
+
+The off-chain subsystem handles:
+
+- data submission  
+- proof verification  
+- earnings validation  
+- SRU computation  
+- batching  
 
 ```
-Driver/Fleet
-     |
-     v
-[ Submission Portal ]
-     |
-     v
-[ Ridera Oracle ]
-     |
-  Validated?
-   /     \
- No       Yes
- |         |
-Rejected   v
-        [ SRU Engine ]
-             |
-             v
-     [ SRU Batch & Merkle Root ]
-             |
-             v
-      Commit Root on Base
-             |
-             v
-      [ Yield Vault ]
-             |
-             v
-        $RDR Stakers
-```
-
----
-
-# 4. Submission Layer
-
-Workers submit earnings via:
-
-- Screenshots  
-- PDF payout statements  
-- Multi-platform bundles (Uber, DoorDash, Grab…)  
-- Weekly logs  
-- Fleet bulk submissions  
-
-Submission metadata includes region, platform, currency, timestamps, device data, and optional GPS hash.
-
-The data flows:
-
-`Front-end → Backend API → Oracle Queue`
-
----
-
-# 5. Oracle Verification Pipeline
-
-This is the core validation engine.
-
-### Mermaid (error-free version)
-
-```mermaid
 flowchart TD
-    A["Raw Input"] --> B["OCR Extraction"]
-    B --> C["Platform Structure Validator"]
-    C --> D["Timestamp Validator"]
-    D --> E["Region Consistency Model"]
-    E --> F["Duplicate / Hash Check"]
-    F --> G["ML Anomaly Detection"]
 
-    G --> H{Validation Pass?}
+A[Submission Portal] --> B[Oracle Input Handler]
 
-    H -->|No| I["Reject / Flag"]
-    H -->|Yes| J["Approved → SRU Engine"]
+B --> C[OCR Engine]
+B --> D[Timestamp Validator]
+B --> E[Platform Structure Validator]
+B --> F[Anomaly Detection Model]
+B --> G[Duplicate Proof Detector]
+
+C --> H[Oracle Decision Engine]
+D --> H
+E --> H
+F --> H
+G --> H
+
+H --> I[Approved Earnings]
+H --> J[Flagged for Validator Audit]
+H --> K[Rejected Submission]
+
+I --> L[SRU Engine]
+
+L --> M[SRU Calculation]
+L --> N[Region Weighting]
+L --> O[Platform Weighting]
+L --> P[Category Weighting]
+
+M --> Q[SRU Output Batch]
+N --> Q
+O --> Q
+P --> Q
+
+Q --> R[Batcher + Merkle Tree Generator]
 ```
 
 ---
 
-# 6. Detailed ASCII Version (Full Oracle Pipeline)
+# **4. On-Chain Architecture Diagram (Base Network)**
+
+This shows how Ridera uses blockchain for integrity, yield, and security.
 
 ```
-+---------------------------+
-|   RAW INPUT RECEIVED      |
-+---------------------------+
-             |
-             v
-+---------------------------+
-|   OCR TEXT EXTRACTION     |
-+---------------------------+
-             |
-             v
-+---------------------------+
-| PLATFORM STRUCTURE MATCH |
-+---------------------------+
-             |
-             v
-+---------------------------+
-|  TIMESTAMP VERIFICATION   |
-+---------------------------+
-             |
-             v
-+---------------------------+
-| REGION CONSISTENCY CHECK |
-+---------------------------+
-             |
-             v
-+---------------------------+
-|  DUPLICATE / HASH CHECK  |
-+---------------------------+
-             |
-             v
-+---------------------------+
-| ML ANOMALY ANALYSIS      |
-+---------------------------+
-             |
-             v
-+---------------------------+
-| PASSED?  |  FAILED?      |
-+---------------------------+
-      |            |
-      v            v
-[ SRU ENGINE ]   [ FLAGGED ]
-```
-
----
-
-# 7. SRU Engine Flow
-
-The SRU Engine converts approved earnings into **Standardized Revenue Units (SRU)** using:
-
-- Currency normalization  
-- Region weights  
-- Platform coefficients  
-- Volatility adjustments  
-
-### Mermaid (error-free version)
-
-```mermaid
-flowchart LR
-    A["Approved Earnings"] --> B["Currency Normalization"]
-    B --> C["Region Weighting"]
-    C --> D["Platform Coefficient Adjustment"]
-    D --> E["SRU Output"]
-```
-
----
-
-# 8. SRU Batching & Merkle Tree Creation
-
-```
-[ SRU Outputs ]
-       |
-       v
-[ Group by Region / Platform / Cycle ]
-       |
-       v
-[ Build Merkle Tree ]
-       |
-       v
-[ Generate Merkle Root ]
-       |
-       v
-[ Commit Root to Base ]
-```
-
----
-
-# 9. On-Chain Settlement (Base)
-
-The Base contracts:
-
-- **ProofRegistry** — Stores Merkle roots & metadata  
-- **YieldVault** — Aggregates SRUs and generates yield cycles  
-- **Staking** — Tracks $RDR stakes & reward entitlement  
-- **ValidatorRegistry** — Manages validator bonding & slashing  
-
-### Mermaid (error-free version)
-
-```mermaid
-flowchart TD
-    A["Batch Merkle Root Commit"]
-        --> B["ProofRegistry"]
-
-    B --> C["YieldVault\nUpdate SRU Totals"]
-    C --> D["Staking\nCheck Stake Distribution"]
-    D --> E["YieldVault.distribute()\nExecute Reward Cycle"]
-    E --> F["$RDR Stakers\nReceive Yield"]
-```
-
----
-
-# 10. End-to-End Full System Diagram (Mermaid)
-
-Corrected version with **valid subgraph syntax**:
-
-```mermaid
 flowchart LR
 
-    subgraph OFFCHAIN["Off-Chain System"]
-        A["Drivers & Fleets"] --> B["Submission API"]
-        B --> C["Ridera Oracle"]
-        C --> D["SRU Engine"]
-        D --> E["Batcher + Merkle Builder"]
-    end
+A[Batcher Output\n(Merkle Root + Metadata)] --> B[Proof Registry Contract]
 
-    subgraph ONCHAIN["On-Chain (Base)"]
-        F["ProofRegistry"]
-        G["YieldVault"]
-        H["Staking"]
-    end
+B --> C[Yield Vault Contract]
 
-    E --> F
-    F --> G
-    G --> H
-    H --> J["$RDR Stakers"]
+C --> D[Staking Contract]
+
+D --> E[Stakers\n(Get Rewards)]
 ```
 
 ---
 
-# 11. Summary
+# **5. Trust Boundary Diagram**
 
-The Ridera pipeline is designed for:
+This diagram shows where trust shifts from off-chain components to cryptographically verified on-chain components.
+
+```
+flowchart TB
+
+subgraph Off-Chain Systems
+A[Submission Portal]
+B[Ridera Oracle]
+C[SRU Engine]
+D[Batcher + Merkle Generator]
+end
+
+A --> B --> C --> D
+
+subgraph On-Chain Systems (Base)
+E[Proof Registry]
+F[Yield Vault]
+G[Staking Contract]
+H[Validator Registry]
+end
+
+D --> E --> F --> G
+
+B -. Flags .-> H
+```
+
+**Boundary Meaning:**
+
+- Off-chain = computation + verification  
+- On-chain = storage + yield + distribution  
+
+Only **minimal, trustless data** (Merkle roots, SRU totals) cross the boundary.
+
+---
+
+# **6. Component Interaction Overview**
+
+```
+sequenceDiagram
+    actor User
+    participant Portal as Submission Layer
+    participant Oracle as Verification Layer
+    participant SRU as SRU Engine
+    participant Batch as Batcher
+    participant Proof as Proof Registry (Base)
+    participant Vault as Yield Vault (Base)
+    participant Stake as Staking Contract
+    actor Staker
+
+    User ->> Portal: Upload Earnings Proof
+    Portal ->> Oracle: Send Raw Submission
+    Oracle ->> Oracle: Validate Proof\n(OCR, timestamp, structure, ML)
+    Oracle ->> SRU: Approved Earnings
+    SRU ->> Batch: SRU Conversion + Metadata
+    Batch ->> Proof: Submit Merkle Root + Cycle Data
+    Proof ->> Vault: Provide totalSRU per cycle
+    Vault ->> Stake: Daily Emission Distribution
+    Stake ->> Staker: Rewards Released
+```
+
+---
+
+# **7. Layered Architecture Summary**
+
+| Layer | Component | Responsibility |
+|-------|-----------|---------------|
+| **Submission Layer** | Portal | Receives earnings |
+| **Verification Layer** | Ridera Oracle | Validates authenticity |
+| **Standardization Layer** | SRU Engine | Converts earnings → SRU |
+| **Batching Layer** | Merkle Generator | Builds cycle batches |
+| **Storage Layer** | Proof Registry | Stores cycle roots |
+| **Yield Layer** | Yield Vault | Computes emissions |
+| **Distribution Layer** | Staking Contract | Sends rewards to users |
+| **Governance Layer** | Validator Registry | Oversees protocol integrity |
+
+---
+
+# **8. Key Design Principles**
+
+### **8.1 Off-Chain Heavy, On-Chain Light**
+Off-chain = computation  
+On-chain = trust, settlement, immutability
+
+### **8.2 Merkle Compression**
+Allows thousands of proofs to be committed in a single root.
+
+### **8.3 Deterministic Yield**
+SRU → Emissions → Staker rewards  
+No speculative APY.
+
+### **8.4 Modular Architecture**
+Each component can upgrade independently.
+
+### **8.5 Enterprise Ready**
+Supports:
+
+- bulk fleet uploads  
+- platform partnerships  
+- multi-region OTP integration (future)  
+
+---
+
+# **9. Conclusion**
+
+The Ridera Architecture is designed for:
 
 - global scale  
-- high throughput  
-- low gas usage  
-- transparent proof verification  
-- secure yield distribution  
-- multi-platform, multi-region compatibility  
+- decentralized security  
+- cryptographic verifiability  
+- stable RWA-backed yield  
+- low on-chain cost  
+- multi-platform mobility integrations  
 
-This file should be updated whenever:
+This architecture makes Ridera the **first globally scalable RWA protocol backed by real mobility work**, transforming daily labor into trustless, verifiable financial primitives.
 
-- new platforms are added  
-- SRU weighting changes  
-- Oracle model updates  
-- batch structure changes  
-
----
-
-*Document version: v1.1 — Architecture / Data Flow (Mermaid-Fixed)*
 
