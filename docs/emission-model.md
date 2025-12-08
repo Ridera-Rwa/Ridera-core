@@ -1,231 +1,279 @@
-Ridera Emission Model
-Dynamic RDR Emissions Backed by Real-World Work (RWW)
-1. Introduction
+# **Ridera Emission Model**  
+### *Dynamic RDR Emissions Backed by Real-World Work (RWW)*
 
-The Ridera Emission Model defines how the protocol converts verified real-world fleet productivity (represented as SRU) into RDR emissions for stakers.
-Unlike traditional protocols that use arbitrary APR or inflation schedules, Ridera’s emissions are directly linked to real economic activity.
+---
 
-Emissions scale up or down based on the amount of SRU generated globally, ensuring:
+# **1. Introduction**
 
-Sustainability
+The **Ridera Emission Model** defines how the protocol converts **verified real-world fleet productivity** (measured as SRU) into **RDR emissions** for stakers.
 
-Fair distribution
+Unlike traditional protocols that rely on arbitrary APRs or inflation schedules, Ridera emissions are **directly linked to real economic activity**.
 
-Economic alignment
+This ensures:
 
-Anti-inflation control
+- **Sustainability**  
+- **Fair distribution**  
+- **Economic alignment**  
+- **Anti-inflation control**
 
-This document explains how the daily emission engine works, how rewards are generated, and how RDR distribution remains transparent and economically grounded.
+This document explains how the daily emission engine works, how rewards are generated, and how RDR distribution stays transparent and economically grounded.
 
-2. Design Principles
+---
 
-Ridera emissions follow four core principles:
+# **2. Design Principles**
 
-2.1 Real-World Backing
+Ridera emissions follow four foundational principles:
 
-RDR rewards are only issued when real SRU is produced.
-No SRU → No emissions.
+## **2.1 Real-World Backing**
+RDR is emitted **only when real work is performed**.  
+If no SRU is generated → **no emissions**.
 
-2.2 Predictable & Anti-Inflation
+## **2.2 Predictable & Anti-Inflation**
+Emissions follow a **soft-capped curve**, avoiding runaway inflation.
 
-Emissions follow a soft-capped curve, preventing runaway token inflation.
+## **2.3 Dynamic & Market-Independent**
+Rewards are unaffected by:
 
-2.3 Dynamic + Market Independent
+- Token price  
+- Market volatility  
+- Speculation  
 
-Rewards do not rely on arbitrary APY percentages or token price manipulation—only on verifiable human productivity.
+Emissions reflect **verified human productivity**.
 
-2.4 Transparent & On-Chain
+## **2.4 Fully Transparent & On-Chain**
+All emission decisions are derived from:
 
-All emission decisions originate from data stored in the Proof Registry and executed by the Yield Vault.
+- **Proof Registry**  
+- **SRU Engine outputs**  
+- **On-chain verifiable SRU cycles**
 
-3. Components of the Emission Model
+---
 
-The Ridera emission system consists of three key layers:
+# **3. Components of the Emission Model**
 
-3.1 SRU Engine
+The emission system has three core layers:
 
-Processes raw earnings → converts into SRU
-Outputs daily cycle data:
+---
 
-totalSRU
+## **3.1 SRU Engine**
+- Processes raw earnings  
+- Converts them into **SRU**  
+- Outputs daily cycle data:
 
-per-user SRU
+  - **totalSRU**  
+  - **per-user SRU**  
+  - **merkleRoot**  
+  - **timestamp**
 
-merkle root
+This data is written to the Proof Registry.
 
-timestamp
+---
 
-Stored in the Proof Registry.
+## **3.2 Proof Registry**
+The **immutable source of truth** for:
 
-3.2 Proof Registry
+- Cycle IDs  
+- Verified totalSRU  
+- Merkle roots  
+- Signed Oracle proofs  
 
-The immutable source of truth for:
+The **Yield Vault reads from here** to compute emissions.
 
-Cycle ID
+---
 
-Verified total SRU
-
-Merkle root
-
-Signed proofs from the oracle
-
-The Yield Vault reads data directly from here.
-
-3.3 Yield Vault
-
-The protocol’s reward computation layer.
+## **3.3 Yield Vault**
+The protocol’s reward engine.
 
 Responsibilities:
 
-Read total SRU of each cycle
+- Read **totalSRU**  
+- Apply **emission formula**  
+- Compute global **dailyEmission**  
+- Distribute rewards proportionally to stakers  
 
-Apply emission formula
+The Yield Vault **never accesses raw earnings**, only SRU outputs.
 
-Determine global daily RDR emission
+---
 
-Allocate rewards proportionally to stakers
+# **4. Emission Model Formula**
 
-The Yield Vault never stores worker income — it interprets only SRU outputs.
+## **4.1 Daily Emission Formula**
 
-4. Emission Model Formula
-4.1 Daily Emission Formula
-dailyEmission = min( BASE_EMISSION + (totalSRU × SRU_Emission_Factor), MAX_EMISSION )
+dailyEmission = min(
+BASE_EMISSION + (totalSRU × SRU_Emission_Factor),
+MAX_EMISSION
+)
 
 
-Where:
+### **Variables Explained**
 
-Variable	Description
-BASE_EMISSION	A small constant emission that ensures minimum staking reward baseline
-totalSRU	Total SRU generated in the previous cycle
-SRU_Emission_Factor	How much RDR is emitted per SRU unit
-MAX_EMISSION	Hard ceiling to prevent inflation
-5. Emission Factors
-5.1 SRU Emission Factor
+| Variable | Description |
+|---------|-------------|
+| **BASE_EMISSION** | Minimum baseline emission per day |
+| **totalSRU** | Verified SRU generated in previous cycle |
+| **SRU_Emission_Factor** | RDR emitted per SRU unit |
+| **MAX_EMISSION** | Hard ceiling to prevent inflation |
 
-This multiplier determines how much SRU affects emissions.
+---
 
-Example value:
+# **5. Emission Factors**
+
+## **5.1 SRU Emission Factor**
+Determines how much SRU contributes to emissions.
+
+Example (adjustable before mainnet):
 
 SRU_Emission_Factor = 0.0002 RDR per SRU
 
 
-(This is protocol-adjustable before mainnet launch.)
+---
 
-5.2 Maximum Emission Cap
-
-Hard upper bound to avoid inflation:
+## **5.2 Maximum Emission Cap**
+Hard ceiling to prevent systemic inflation:
 
 MAX_EMISSION = 100,000 RDR per day
 
 
-This ensures predictable token output even if SRU volume rapidly increases.
+---
 
-5.3 Base Emission Floor
+# **6. How Emissions Respond to SRU Volume**
 
-Minimum emission if SRU is low:
+## **6.1 Low SRU Day**
+- Fewer workers  
+- Low activity  
+- Limited submissions  
+
+**Result:** Emissions stay near **BASE_EMISSION**.
+
+---
+
+## **6.2 Moderate SRU Day**
+- Healthy global worker activity  
+- Normal operational behavior  
+
+**Result:** Emissions increase **proportionally**.
+
+---
+
+## **6.3 High SRU Day**
+- Surge hours  
+- Holidays  
+- Heavy workforce activity  
+
+**Result:** Emissions increase but **never exceed MAX_EMISSION**.
+
+---
+
+# **7. Emission Distribution to Stakers**
+
+Once dailyEmission is computed:
 
 BASE_EMISSION = 5,000 RDR per day
 
 
-Provides stability for stakers during early periods.
+---
 
-6. How Emissions Respond to SRU Volume
-6.1 Low SRU Day
+# **6. How Emissions Respond to SRU Volume**
 
-Daily tasks low
+## **6.1 Low SRU Day**
+- Fewer workers  
+- Low activity  
+- Limited submissions  
 
-Few riders submit data
+**Result:** Emissions stay near **BASE_EMISSION**.
 
-Result:
-Emissions stay close to BASE_EMISSION.
+---
 
-6.2 Moderate SRU Day
+## **6.2 Moderate SRU Day**
+- Healthy global worker activity  
+- Normal operational behavior  
 
-Healthy task volume
+**Result:** Emissions increase **proportionally**.
 
-More fleets participating
+---
 
-Result:
-Emissions rise proportionally with SRU.
+## **6.3 High SRU Day**
+- Surge hours  
+- Holidays  
+- Heavy workforce activity  
 
-6.3 High SRU Day
+**Result:** Emissions increase but **never exceed MAX_EMISSION**.
 
-Surge hours
+---
 
-Holidays, weekends
+# **7. Emission Distribution to Stakers**
 
-High number of active fleets
-
-Result:
-Emissions increase but never exceed MAX_EMISSION.
-
-7. Emission Distribution to Stakers
-
-Once the Yield Vault computes the daily emission:
+Once dailyEmission is computed:
 
 userReward = ( userStake / totalStake ) × dailyEmission
 
-
 Meaning:
 
-Stakers receive RDR proportionally
+- **Fair proportional distribution**
+- **Larger stake = larger share**
+- **No boosting, no tiered manipulation**
+- 100% transparent and deterministic
 
-Larger stake = larger share
+---
 
-No boosting, no unfair multipliers
+# **8. Holistic Emission Lifecycle**
 
-100% transparent
+Worker Earnings
+↓
+SRU Engine
+↓
+Proof Registry
+↓
+Yield Vault
+↓
+Daily Emission
+↓
+RDR Rewards to Stakers
 
-8. Holistic Emission Lifecycle
-Worker Earnings → SRU Engine → Proof Registry → Yield Vault → Daily Emission → Staker Rewards
 
+A trustless and complete cycle from **real-world income → on-chain yield**.
 
-This creates a complete, trustless flow from real-world income → on-chain yield.
+---
 
-9. Design Benefits
-9.1 Economic Sustainability
+# **9. Design Benefits**
 
-Emissions scale with real productivity.
+## **9.1 Economic Sustainability**
+Emissions scale only with actual productivity.
 
-9.2 Anti-Gaming Mechanism
+## **9.2 Anti-Gaming Mechanism**
+Fake earnings cannot create SRU → cannot generate rewards.
 
-Fake earnings cannot produce SRU → cannot produce rewards.
+## **9.3 Predictable Token Supply**
+Emission caps ensure long-term stability and protect holders.
 
-9.3 Predictable Token Supply
+## **9.4 Real-World Yield Alignment**
+Unlike traditional APYs, Ridera rewards track **global workforce performance**.
 
-Hard emission ceilings protect long-term holders.
+---
 
-9.4 Real-World Yield Alignment
-
-Unlike APY-based models, Ridera rewards are tied to actual global workforce performance.
-
-10. Future Enhancements
+# **10. Future Enhancements**
 
 Planned upgrades:
 
-Multi-region SRU weighting in emissions
+- Multi-region SRU weighting  
+- Seasonal emission adjustments  
+- Volatility smoothing curve  
+- DAO-controlled factors  
+- Dynamic caps based on maturity  
 
-Seasonal emissions adjustments
+---
 
-Emission smoothing curve to reduce volatility
+# **11. Conclusion**
 
-DAO-defined emission factors
+Ridera introduces the world’s first **emission model directly tied to verified human work**.
 
-Dynamic caps based on protocol maturity
+By grounding token issuance in real productivity, Ridera ensures:
 
-11. Conclusion
+- **Fair rewards**  
+- **Controlled inflation**  
+- **Real-world backed on-chain yield**  
+- **Long-term economic scalability**
 
-Ridera introduces the world’s first emissions model tied directly to verified human work.
-By grounding token issuance in real worker productivity, Ridera achieves a sustainable, transparent, and economically resilient model that aligns incentives across all participants.
+This positions Ridera as one of the most **economically sound and transparent RWA models** in Web3.
 
-The emission engine ensures:
 
-Fair rewards
-
-Controlled inflation
-
-Real-world backed on-chain yield
-
-Long-term scalability
-
-This makes Ridera one of the most economically grounded RWA protocols in Web3.
