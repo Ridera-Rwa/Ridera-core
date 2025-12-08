@@ -775,27 +775,99 @@ For every daily work cycle, the Yield Vault reads the following data from the Pr
 The vault never reads raw earnings data; it relies solely on validated SRU computations.
 
 
-## 9.3 Emission Logic
+## 9.3 Dynamic Emission Model
 
-The Yield Vault determines the daily RDR emissions using:
+The Yield Vault applies Ridera’s Dynamic Emission Curve Model (DECM) to convert verified real-world productivity (measured as totalSRU per cycle) into controlled, sustainable RDR token emissions.  
+This model ensures that rewards scale with ecosystem activity while maintaining strict token-supply discipline.
 
-- The total SRU generated for the cycle  
-- The protocol’s predefined reward schedule  
-- Emission decay curves (if applicable)  
-- Daily maximum emission thresholds  
-
-This ensures emission amounts remain predictable, fair, and aligned with long-term tokenomics.
+The emission curve increases smoothly as totalSRU grows, but it never exceeds the protocol’s defined maximum emission capacity.
 
 
-## 9.4 Worker-Level Reward Calculation
+### 9.2.1 Emission Formula
 
-Although rewards are distributed through the Staking Contract, the Yield Vault is responsible for computing worker-level reward eligibility.
+The Yield Vault computes the protocol’s daily RDR emission using the following function:
 
-Worker reward share is based on:
+dailyEmission = maxDailyEmission × (1 - e^( - totalSRU / SRUTarget ))
 
-**workerShare = workerSRU / totalSRU**
 
-The Yield Vault uses the Merkle Root to validate each worker’s proof-of-work contribution before including their share in the final distribution.
+Where:
+
+- **maxDailyEmission** — The maximum number of RDR tokens that can be emitted per cycle.  
+- **SRUTarget** — The standardized productivity level at which the emission curve reaches its optimal operational range.  
+- **totalSRU** — The aggregate SRU generated across all verified workers for that cycle.
+
+This function ensures a continuously increasing reward response to real productivity, while the exponential decay term prevents excessive inflation as SRU grows.
+
+
+### 9.2.2 Emission Curve Behavior
+
+The emission curve exhibits the following characteristics:
+
+- **Low SRU → Low Emission:**  
+  When totalSRU is below SRUTarget, emissions grow proportionally and remain conservative.
+
+- **Optimal SRU → Balanced Emission:**  
+  At around SRUTarget, the emission output reaches the system’s efficient operating zone.
+
+- **High SRU → Asymptotic Emission:**  
+  As totalSRU becomes very large, emission approaches maxDailyEmission but never exceeds it.
+
+This ensures continuity, predictability, and inflation-resistant token issuance.
+
+
+### 9.2.3 Emission Output to the Staking Contract
+
+After computing `dailyEmission`, the Yield Vault forwards this amount to the Staking Contract.
+
+The Staking Contract distributes rewards proportionally:
+
+stakerReward = (userStake / totalStaked) × dailyEmission
+
+This creates a fair and transparent distribution model tied directly to verifiable real-world output.
+
+
+### 9.2.4 System Block Diagram
+
+
+            +---------------------------+
+            |     Proof Registry        |
+            |---------------------------|
+            |  • cycleId                |
+            |  • totalSRU               |
+            |  • merkleRoot             |
+            +-------------+-------------+
+                          |
+                          v
+            +---------------------------+
+            |       Yield Vault         |
+            |---------------------------|
+            |  Inputs: totalSRU         |
+            |  Params:                  |
+            |    • maxDailyEmission     |
+            |    • SRUTarget            |
+            |                           |
+            |  Computes:                |
+            |    dailyEmission =        |
+            |    maxDailyEmission ×     |
+            |    (1 - e^( -totalSRU/    |
+            |                   SRUTarget ))
+            +-------------+-------------+
+                          |
+                          v
+            +---------------------------+
+            |     Staking Contract      |
+            |---------------------------|
+            |  Distributes:             |
+            |   (userStake /            |
+            |    totalStaked) ×         |
+            |    dailyEmission          |
+            |                           |
+            +---------------------------+
+                          |
+                          v
+            +---------------------------+
+            |       RDR Stakers         |
+            +---------------------------+
 
 
 ## 9.5 Interaction with the Staking Contract
@@ -834,19 +906,6 @@ For each cycle, the Yield Vault publishes:
 - Reward parameters used  
 
 This data provides full transparency for auditors and ecosystem partners.
-
-
-## 9.8 Future Enhancements
-
-Planned upgrades to the Yield Vault include:
-
-- Dynamic emission curves based on ecosystem activity  
-- SRU-based multipliers for high-performing workers  
-- Integration with advanced staking derivatives  
-- Multi-chain emission routing  
-- Automated reward forecasting for governance  
-
-As Ridera scales, the Yield Vault will become a core component of work-based DeFi infrastructure.
 
 
 ## 9.9 Role in the Ridera Ecosystem
