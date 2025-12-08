@@ -1,69 +1,85 @@
-# Ridera Protocol Overview  
-### Global Mobility → Verified Proofs → Standardized Revenue → On-Chain Yield (Base)
-
-This document provides a complete technical overview of the Ridera Protocol, including system components, trust boundaries, off-chain vs on-chain workflow, and the economic model that powers Ridera’s Mobility RWA framework.
-
-It is intended for developers, auditors, integration partners, and contributors.
+# **Ridera Protocol Overview**  
+### *Global Mobility → Verified Proofs → Standardized Revenue → On-Chain Yield (Base)*  
+### *Technical Architecture Overview — Ridera Protocol v1.0*
 
 ---
 
-# 1. Protocol Purpose
+# **1. Introduction**
 
-Ridera converts global mobility earnings (from Uber, Lyft, DoorDash, Grab, Rappi, etc.) into **verifiable**, **standardized**, and **on-chain** value.
+The **Ridera Protocol** is a hybrid off-chain/on-chain system that converts global mobility earnings (Uber, Lyft, DoorDash, Grab, Rappi, Swiggy, Zomato, etc.) into **verifiable, standardized, and on-chain value**.
 
-The protocol solves three fundamental problems:
+Ridera solves three fundamental problems in the mobility economy:
 
-1. **Global mobility income cannot be verified easily.**  
-2. **Earnings are fragmented across apps, regions, and currencies.**  
-3. **No on-chain system fairly represents mobility income.**
+1. **Mobility income cannot be easily verified**  
+2. **Earnings are fragmented across platforms, regions, and currencies**  
+3. **No on-chain system represents global mobility income fairly**
 
-Ridera introduces:
+To solve this, Ridera introduces:
 
-- a global verification Oracle  
-- a standardized metric (SRU)  
-- a decentralized yield vault  
-- validator-governance  
-- a transparent and scalable RWA model  
+- a **global verification Oracle**  
+- a **standardized revenue unit (SRU)**  
+- a **decentralized yield vault**  
+- **validator participation & governance**  
+- a transparent, scalable **RWA model** based on mobility work  
 
----
-
-# 2. Core Architecture Layers
-
-The Ridera protocol consists of **four layers**:
-
-### **1. Submission Layer (Off-chain)**
-Receives earnings from drivers and fleets.
-
-### **2. Verification Layer — Ridera Oracle (Off-chain)**
-Parses, validates, and authenticates income proofs.
-
-### **3. Standardization Layer — SRU Engine (Off-chain)**
-Normalizes earnings into a global mobility unit (SRU).
-
-### **4. Settlement Layer (On-Chain, Base)**
-Anchors proofs, updates SRU totals, runs yield cycles, and distributes $RDR rewards.
+This document provides the full technical overview of Ridera’s architecture, workflow, trust boundaries, and yield model.
 
 ---
 
-# 3. System Modules Breakdown
+# **2. Core Architecture Layers**
+
+Ridera consists of **four major layers**, split between off-chain and on-chain components.
+
+---
+
+## **2.1 Submission Layer — Off-chain**
+Receives earnings proofs from drivers, couriers, and fleets.
+
+---
+
+## **2.2 Verification Layer — Ridera Oracle (Off-chain)**
+Validates, parses, and authenticates all income submissions.
+
+---
+
+## **2.3 Standardization Layer — SRU Engine (Off-chain)**
+Converts verified earnings into **SRU — Standardized Revenue Units**, the core metric of Ridera’s RWA model.
+
+---
+
+## **2.4 Settlement Layer — On-Chain (Base Network)**
+Anchors proofs, stores SRU cycles, computes emissions, and distributes rewards.
+
+Components on-chain:
+
+- Proof Registry  
+- Yield Vault  
+- Staking Contract  
+- Validator Registry  
+
+---
+
+# **3. System Modules Breakdown**
 
 Below are the **8 core modules** powering Ridera.
 
 ---
 
-## **3.1 Submission Module**
+## **3.1 Submission Module (Off-chain)**
 
-Handles all incoming proofs.
+Responsible for receiving and preprocessing all proof submissions.
 
-Functions:
+**Functions:**
+
 - input validation  
-- file parsing  
+- screenshot/PDF parsing  
 - metadata extraction  
-- request queuing  
+- queueing for the Oracle  
 
-Supports:
+**Supports:**
+
 - Screenshots  
-- PDFs  
+- PDF statements  
 - Platform payout logs  
 - Fleet bulk uploads  
 
@@ -71,155 +87,180 @@ Supports:
 
 ## **3.2 Oracle Module (Verification Engine)**
 
-Ensures all proof submissions are:
-- real  
+Ensures all earnings are:
+
+- authentic  
 - accurate  
 - non-duplicated  
-- platform-consistent  
+- consistent with platform logic  
 
-Oracle Components:
-- OCR Engine  
-- Platform Structure Validator  
-- Timestamp Validator  
-- Region-weight anomaly model  
-- Duplicate & hash-check system  
-- ML anomaly detection  
-- Validator routing (for flagged entries)
+**Oracle Components:**
 
-Outputs:
+- OCR engine  
+- Platform structure validator  
+- Timestamp validator  
+- Region-based anomaly detection model  
+- Duplicate hash scanning  
+- ML fraud detection  
+- Validator routing (for suspicious entries)
+
+**Outputs:**
+
 - approved earnings  
-- flagged earnings  
+- flagged proofs  
 - rejected submissions  
-- trust-score updates  
+- user trust-score updates  
 
 ---
 
 ## **3.3 SRU Engine (Standardization Layer)**
 
-Transforms validated earnings into **Standardized Revenue Units**.
+Transforms Oracle-approved earnings into **SRU**.
 
-Inputs:
-- validated earnings  
-- currency data  
-- region multipliers  
+**Inputs:**
+
+- validated income  
+- currency conversion  
 - platform coefficients  
+- region multipliers  
 
-Outputs:
+**Outputs:**
+
 - SRU values  
 - SRU metadata  
-- SRU batch entries  
+- cycle batch entries  
+
+SRU ensures global fairness across all regions and platforms.
 
 ---
 
-## **3.4 Batcher & Merkle Generator**
+## **3.4 Batcher & Merkle Generator (Off-chain)**
 
-Bundles SRUs for efficient on-chain commitment.
+Bundles SRU entries for efficient on-chain anchoring.
 
-Functions:
+**Functions:**
+
 - aggregate SRUs  
 - group by time/region/platform  
 - build Merkle trees  
 - generate Merkle roots  
-- prepare batch metadata  
+- prepare metadata  
 
-Merkle root = immutable representation of hundreds or thousands of SRUs.
+A Merkle root represents **thousands of SRUs** in one small commitment.
 
 ---
 
-## **3.5 On-Chain Proof Registry (Base)**
+## **3.5 On-Chain Proof Registry (Base Network)**
 
-Minimal storage contract responsible for:
+Immutable, minimal storage contract.
+
+**Responsibilities:**
+
 - storing Merkle roots  
 - storing batch metadata  
-- exposing batch IDs for verification  
+- exposing cycle IDs  
 - enabling off-chain inclusion proof checks  
 
-Ensures fully transparent SRU proofs.
+This ensures Ridera’s SRU data is **auditable and tamper-proof**.
 
 ---
 
 ## **3.6 Yield Vault (On-Chain)**
 
-The core financial engine of Ridera.
+The financial engine that converts total SRU into $RDR token emissions.
 
-Responsibilities:
-- aggregate SRU totals  
-- compute yield cycles  
+**Responsibilities:**
+
+- read totalSRU from Proof Registry  
+- compute daily yield cycles  
 - distribute rewards to stakers  
-- update accounting  
-- provide public logs  
+- maintain emission records  
+- ensure SRU-backed reward integrity  
 
-Yield is backed **exclusively by real mobility earnings**.
+Yield is produced *exclusively* from real mobility work.
 
 ---
 
 ## **3.7 Staking Contract (On-Chain)**
 
 Tracks:
-- $RDR stake balances  
-- eligibility for yield cycles  
-- lock periods  
-- early withdrawal rules  
 
-Rewards are distributed according to the user’s stake share.
+- staker balances  
+- eligibility for reward cycles  
+- pending rewards  
+
+Rewards follow the formula:
+
+```
+userReward = (userStake / totalStake) × dailyEmission
+```
 
 ---
 
 ## **3.8 Validator Registry (On-Chain)**
 
-Controls validator behavior.
+Controls validator roles for the Oracle system.
 
 Includes:
+
 - validator bonding  
 - slashing rules  
 - audit responsibilities  
 - trust scoring  
 
-Validators operate both:
-- **off-chain** (reviewing proofs)
-- **on-chain** (bonding, governance voting)
+Validators operate:
+
+- **off-chain** → proof audits  
+- **on-chain** → governance, staking  
 
 ---
 
-# 4. End-to-End Protocol Flow
+# **4. End-to-End Protocol Flow**
 
-Below is the **complete lifecycle** of a submission:
+Complete lifecycle:
 
 ```
-SUBMISSION → ORACLE → SRU ENGINE → BATCHER → BASE (PROOF REGISTRY) → YIELD VAULT → STAKERS
+SUBMISSION → ORACLE → SRU ENGINE → BATCHER 
+→ BASE (PROOF REGISTRY) → YIELD VAULT → STAKERS
 ```
 
-Detailed flow:
+---
 
-1. **Driver uploads proof**  
+### **Step-by-step Flow**
+
+1. Driver uploads income proof  
 2. Oracle verifies authenticity  
-3. Oracle passes approved earnings to SRU Engine  
-4. SRU Engine converts earnings → SRU  
-5. Batcher groups SRUs and builds Merkle tree  
-6. Merkle root submitted to Base  
-7. ProofRegistry stores root  
-8. YieldVault updates totals  
-9. At cycle end → YieldVault distributes rewards  
-10. Stakers receive $RDR yield  
+3. Approved earnings → SRU Engine  
+4. SRU Engine converts earnings into SRU  
+5. Batcher creates Merkle tree  
+6. Merkle root submitted on Base  
+7. Proof Registry stores cycle  
+8. Yield Vault reads totalSRU  
+9. Yield Vault executes emission cycle  
+10. Stakers receive $RDR rewards  
+
+This creates a complete **real-world work → on-chain yield** pipeline.
 
 ---
 
-# 5. Trust Boundary Diagram (Mermaid)
+# **5. Trust Boundary Diagram (Mermaid)**
 
-```mermaid
-flowchart LR
-    A[User Devices] --> B[Submission Layer]
-    B --> C[Oracle Engine]
-    C --> D[SRU Engine]
-    D --> E[Batcher]
-    E --> F[(Base: ProofRegistry)]
-    F --> G[(Base: YieldVault)]
-    G --> H[(Base: Staking)]
+> *(Optional – you can insert a Mermaid graph in GitBook)*
+
+```
+graph TD
+A[Submission Layer] --> B[Ridera Oracle]
+B --> C[SRU Engine]
+C --> D[Batcher + Merkle Generator]
+D --> E[On-Chain Proof Registry]
+E --> F[Yield Vault]
+F --> G[Staking Contract]
+G --> H[Stakers Receive Rewards]
 ```
 
 ---
 
-# 6. Off-Chain vs On-Chain Responsibilities
+# **6. Off-Chain vs On-Chain Responsibilities**
 
 | Component | Off-Chain | On-Chain (Base) |
 |----------|-----------|------------------|
@@ -235,56 +276,63 @@ flowchart LR
 
 ---
 
-# 7. Protocol Guarantees
+# **7. Protocol Guarantees**
 
-The Ridera protocol guarantees:
+Ridera guarantees:
 
-### **1. Verifiability**  
-All earnings verifiable through Merkle proofs.
+## **1. Verifiability**
+Every SRU can be proven through Merkle inclusion proofs.
 
-### **2. Transparency**  
-Batch metadata and yield cycles are public.
+## **2. Transparency**
+All batches, cycles, and emissions are public.
 
-### **3. Non-custodial model**  
-Protocol never holds user fiat.
+## **3. Non-Custodial Structure**
+Ridera never holds user fiat — only cryptographic proofs.
 
-### **4. Global fairness**  
-SRU ensures equal representation across regions.
+## **4. Global Fairness**
+SRU standardizes income across 195+ countries.
 
-### **5. Security**  
-Anchored proofs, slashed validators, multi-layer validation.
+## **5. Security**
+Validators, signatures, anomaly detection, and proof anchoring provide multi-layer safety.
 
 ---
 
-# 8. Future Upgrade Path
+# **8. Future Upgrade Path**
 
-### Oracle v2  
+### **Oracle v2**
 - ML automation  
-- language-independent parsing  
-- behavior modeling  
+- Language-independent parsing  
+- Behavior modeling  
 
-### Oracle v3  
-- API integrations with mobility platforms  
-- automated earnings sync  
+### **Oracle v3**
+- Mobility platform API integrations  
+- Automatic earnings sync  
 
-### Oracle v4  
+### **Oracle v4**
 - Zero-knowledge earnings validation  
 
-### Yield Vault v2  
-- multi-vault pools  
-- region-specific pools  
+### **Yield Vault v2**
+- Multi-vault pools  
+- Region-specific reward markets  
 
-### Governance v1  
-- validator-driven governance  
-- SRU model proposals  
-
----
-
-# 9. Summary
-
-The Ridera Protocol is a hybrid off-chain/on-chain system built for scalable, global, and secure tokenization of mobility income.  
-By combining rigorous verification, standardized revenue units, and decentralized on-chain yield, Ridera introduces the first global RWA model directly tied to mobility labor — one of the world’s largest and most stable industries.
+### **Governance v1**
+- Validator-driven governance  
+- SRU parameter proposals  
 
 ---
 
-*Document version: v1.0 — Protocol Architecture Overview*
+# **9. Summary**
+
+The Ridera Protocol is a **global, scalable, and secure mobility-RWA system** that transforms real-world labor into verifiable, standardized, on-chain economic value.
+
+Through:
+
+- rigorous Oracle verification  
+- SRU standardization  
+- cryptographic Merkle proofs  
+- decentralized yield mechanics  
+
+Ridera introduces the **first blockchain-native RWA model tied directly to mobility work**, one of the largest and most stable industries in the world.
+
+**Document Version: v1.0 — Protocol Architecture Overview**
+
