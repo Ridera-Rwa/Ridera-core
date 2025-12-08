@@ -2564,7 +2564,7 @@ for global deployment.
 
 ---
 
-23. Team
+## 23. Team
 
 Ridera is built by a small team focused on creating a global work-based RWA infrastructure.
 Each member contributes specific expertise in protocol design, engineering, and operations.
