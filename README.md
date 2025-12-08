@@ -870,7 +870,20 @@ This creates a fair and transparent distribution model tied directly to verifiab
             +---------------------------+
 
 
-## 9.5 Interaction with the Staking Contract
+
+### 9.2.5 Purpose of the Dynamic Emission Curve
+
+The DECM ensures:
+
+- Sustainable token issuance aligned with real economic activity  
+- Protection of protocol-level token supply  
+- Fair reward distribution independent of market speculation  
+- Smooth scaling as Ridera expands globally  
+- Elimination of fixed-rate or arbitrary APR models  
+
+This model anchors Ridera’s token economy to measurable, verifiable, real-world productivity in a stable and transparent manner.
+
+## 9.3 Interaction with the Staking Contract
 
 After computing the daily emissions, the Yield Vault:
 
@@ -882,7 +895,7 @@ After computing the daily emissions, the Yield Vault:
 Staking ensures that RDR distribution flows to long-term ecosystem participants.
 
 
-## 9.6 Preventing Invalid Reward Issuance
+## 9.4 Preventing Invalid Reward Issuance
 
 The Yield Vault incorporates several safety checks:
 
@@ -895,7 +908,7 @@ The Yield Vault incorporates several safety checks:
 This guarantees that reward issuance cannot be manipulated.
 
 
-## 9.7 Emission Transparency
+## 9.5 Emission Transparency
 
 For each cycle, the Yield Vault publishes:
 
@@ -908,7 +921,7 @@ For each cycle, the Yield Vault publishes:
 This data provides full transparency for auditors and ecosystem partners.
 
 
-## 9.9 Role in the Ridera Ecosystem
+## 9.6 Role in the Ridera Ecosystem
 
 The Yield Vault serves as the economic link between:
 
