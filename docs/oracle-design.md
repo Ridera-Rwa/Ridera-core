@@ -2,303 +2,403 @@
 ### Global Mobility Verification Engine  
 ### Ridera Protocol — Technical Specification
 
----
+1. Overview
 
-# 1. Overview
+The Ridera Oracle is the verification backbone of the Ridera protocol.
+It processes real-world mobility earnings submitted by workers—such as ride-hailing drivers, food delivery couriers, and micro-fleet operators—and validates these submissions through multi-layered checks.
 
-The Ridera Oracle is the verification layer of the Ridera protocol.  
-It transforms raw mobility earnings (screenshots, statements, logs) into validated, standardized, tamper-resistant data that can be used to generate on-chain yield.
+The Oracle ensures that all submitted earnings are:
 
-The Oracle is responsible for:
+authentic
 
-- parsing multi-platform earnings  
-- verifying authenticity  
-- detecting anomalies and fraud  
-- merging multiple data sources  
-- scoring user reputation  
-- batching proofs  
-- generating Standardized Revenue Units (SRU)  
-- routing questionable data to validators  
+consistent
 
-The Oracle is the backbone of Ridera’s RWA integrity.
+non-duplicated
 
----
+fraud-resistant
 
-# 2. Design Goals
+standardized for SRU computation
 
-The Oracle is engineered with the following goals:
+It does not generate SRU itself.
+Instead, it outputs verified earnings to the SRU Engine, which performs standardization and final conversion into Standardized Revenue Units (SRU).
 
-## 2.1 Global Compatibility
-Works with:
-- ride-hailing platforms  
-- delivery platforms  
-- courier services  
-- independent fleets  
-- multi-platform earners  
+2. Design Goals
 
-## 2.2 Tamper-Resistance
-Proofs undergo:
-- timestamp verification  
-- geo-pattern matching  
-- duplicate detection  
-- ML anomaly scoring  
+The Ridera Oracle is engineered around five primary goals:
 
-## 2.3 Scalability
-Supports:
-- millions of daily earnings proofs  
-- global multi-region operations  
-- multi-language screenshot parsing  
+2.1 Global Compatibility
 
-## 2.4 Decentralization
-Validators are included to:
-- audit random proofs  
-- validate flagged submissions  
-- vote on Oracle rule updates  
+Support for all mobility sectors:
 
-## 2.5 Transparency
+Ride-hailing (Uber, Lyft, Grab, Bolt, Didi)
+
+Food delivery (Zomato, Swiggy, DoorDash, Deliveroo)
+
+Parcel courier fleets
+
+Independent micro-fleets
+
+Multi-platform earners
+
+2.2 Tamper-Resistance
+
+Every submission undergoes:
+
+metadata validation
+
+timestamp cross-checking
+
+image anomaly detection
+
+duplicate detection
+
+region consistency modeling
+
+2.3 Scalability
+
+Designed to handle:
+
+millions of global submissions
+
+multi-language OCR
+
+multi-region workloads
+
+peak-hour surge load
+
+2.4 Progressive Decentralization
+
+Oracle starts semi-centralized (v1), becoming more decentralized through:
+
+validator audits
+
+rule-based governance
+
+community oversight mechanisms
+
+2.5 Transparency & Traceability
+
 All verified proofs are:
-- logged  
-- hashed  
-- published on-chain  
 
----
+logged
 
-# 3. Oracle Architecture
+hashed
 
-The Oracle consists of four primary layers:
+batched
 
-1. **Input Layer (Data Ingestion)**  
-2. **Verification Layer (Core Oracle Engine)**  
-3. **Validator Layer (Decentralized Proof Checking)**  
-4. **Output Layer (SRU Generation + Yield Routing)**  
+posted to the Proof Registry
 
----
+This ensures public auditability and long-term integrity.
 
-# 4. Layer 1 — Input Layer (Data Ingestion)
+3. Oracle Architecture
 
-This is the entry point for global mobility earnings.
+The Oracle operates through four main layers:
 
-## 4.1 Supported Input Formats
+Input Layer – Ingestion of earnings data
 
-### 4.1.1 Screenshots (OCR-Based)
-Supports multiple UI languages:
-- English  
-- Spanish  
-- Portuguese  
-- Arabic  
-- Hindi  
-- Indonesian  
-- Many more  
+Verification Layer – Core validation checks
 
-The OCR engine extracts:
-- payout amount  
-- date/time  
-- completed tasks  
-- bonuses  
-- platform ID  
+Validator Layer – Decentralized auditing (v2+)
 
-### 4.1.2 PDF Statements
-Parsed directly from:
-- Uber  
-- Bolt  
-- Deliveroo  
-- iFood  
-- Grab  
+Output Layer – Standardized output to SRU Engine
 
-### 4.1.3 Multi-Platform Aggregation
-The Oracle can merge earnings from:
-- 2+ delivery/ride apps  
-- weekly/monthly summaries  
+4. Layer 1 — Input Layer (Data Ingestion)
 
-### 4.1.4 Metadata Enrichment
-The system adds:
-- region code  
-- payout type  
-- device signature  
-- optional GPS validation  
+The input layer collects and normalizes earnings from multiple sources.
 
----
+4.1 Supported Input Formats
+4.1.1 Screenshots (OCR Processing)
 
-# 5. Layer 2 — Verification Layer (Core Engine)
+Supports OCR for:
 
-This is the heart of the Oracle.
+English
 
-It performs 7 categories of checks:
+Spanish
 
----
+Portuguese
 
-## 5.1 Timestamp Validation
-Ensures:
-- screenshot timestamp matches device clock  
-- payout date belongs to correct cycle  
-- no backdating or forward-dating  
+Arabic
 
----
+Hindi
 
-## 5.2 Region Consistency Modeling
-Checks whether:
-- revenue matches typical region levels  
-- patterns match known city activity  
-- surge hours align with known platform data  
+Indonesian
 
-Each region has:
-- expected minimum range  
-- expected maximum range  
-- typical surge multipliers  
-- typical weekly variance  
+More languages will be added progressively
 
----
+Extracted fields include:
 
-## 5.3 Platform Structure Validation
-Each mobility platform has a unique structure.
+total payout
 
-Example:
-- Uber: trip count must match gross earnings  
-- DoorDash: base pay + tip breakdown  
-- Bolt: distance/time + bonus items  
+base pay, bonus, tip breakdown
 
-Any mismatch triggers review.
+date/time
 
----
+task count
 
-## 5.4 Duplicate Submission Detection
-The Oracle checks:
-- repeated screenshots  
-- repeated statements  
-- image hashing  
-- metadata fingerprinting  
+platform identifier
 
-Duplicated earnings are automatically rejected.
+4.1.2 PDF Statements
 
----
+Direct ingestion from platforms such as:
 
-## 5.5 Anomaly & Fraud Detection (ML)
-Machine learning flags:
-- unrealistic spikes  
-- altered images  
-- abnormal patterns  
-- low-probability payouts  
+Uber
+
+Bolt
+
+Deliveroo
+
+Grab
+
+iFood
+
+4.1.3 Multi-Platform Merging
+
+The Oracle can merge submissions from 2–4 apps per worker.
+
+4.1.4 Metadata Enrichment
+
+The Input Layer attaches:
+
+region code
+
+currency
+
+device signature
+
+optional GPS match
+
+submission timestamp
+
+5. Layer 2 — Verification Layer (Core Oracle Engine)
+
+This is where the heavy logic is executed.
+Each submission passes through seven verification stages.
+
+5.1 Timestamp Validation
+
+Checks include:
+
+screenshot timestamp vs. device local time
+
+whether payout belongs to the correct daily cycle
+
+detection of forward/backdated entries
+
+5.2 Region Consistency Modeling
+
+The Oracle compares earnings with known regional patterns:
+
+minimum and maximum expected ranges
+
+task density
+
+typical payout fluctuations
+
+surge-hour alignment
+
+local platform economics
+
+Each region maintains its own adaptive model.
+
+5.3 Platform Structure Validation
+
+Each mobility platform has a unique earnings structure. The Oracle verifies:
+
+Uber: fare + time + distance consistency
+
+DoorDash: base pay, tip, bonus breakdown
+
+Grab: surge multipliers
+
+Bolt: trip count vs. total gross
+
+Any mismatch triggers an audit request.
+
+5.4 Duplicate Submission Detection
 
 The Oracle uses:
-- neural network image anomaly detector  
-- payout trend model  
-- region variance clustering  
-- driver/rider historical patterns  
 
----
+perceptual hashing
 
-## 5.6 Reputation Scoring
-Each user has a trust score based on:
-- number of clean proofs  
-- number of rejections  
-- audit outcomes  
-- validator approvals  
-- region consistency  
+metadata fingerprint comparison
 
-This score affects:
-- audit frequency  
-- allowed submission size  
-- reward multiplier  
+image hashing
 
----
+sequence pattern matching
 
-## 5.7 Proof Batching
-All verified proofs are grouped into:
-- 24-hour cycles  
-- platform groups  
-- region buckets  
+Duplicate earnings are automatically rejected.
 
-This ensures fairness in SRU conversion.
+5.5 ML-Based Anomaly Detection
 
----
+Machine learning models detect:
 
-# 6. Layer 3 — Validator Layer
+altered or synthetic screenshots
 
-Validators provide decentralized oversight.
+improbable earnings spikes
 
-## 6.1 Validator Duties
+mismatched regional profiles
+
+historical pattern anomalies
+
+Models used:
+
+CNN-based image anomaly detector
+
+regional payout prediction model
+
+clustering for detecting abnormal user behavior
+
+5.6 Reputation Scoring
+
+Each user maintains a dynamic trust score based on:
+
+number of valid submissions
+
+anomaly flags
+
+validator audits
+
+historical consistency
+
+Note:
+Reputation does not affect rewards.
+It only adjusts:
+
+audit frequency
+
+submission limits
+
+automatic approval likelihood
+
+5.7 Proof Batching
+
+All approved proofs are grouped into:
+
+a 24-hour cycle
+
+region buckets
+
+platform groups
+
+The output is sent to the SRU Engine for standardization.
+
+6. Layer 3 — Validator Layer
+
+Introduced progressively starting Oracle v2.
+
+6.1 Responsibilities
+
 Validators:
-- audit flagged submissions  
-- vote on Oracle rule changes  
-- confirm large fleet batches  
-- validate suspicious activity  
-- maintain regional checks  
 
-## 6.2 Rewards
-Validators earn $RDR for:
-- accuracy  
-- participation  
-- low dispute rates  
+audit flagged submissions
 
-## 6.3 Slashing
+verify complex proofs
+
+confirm large fleet batches
+
+provide feedback for rule updates
+
+6.2 Incentives
+
+Validators earn RDR for:
+
+high audit accuracy
+
+low dispute rates
+
+consistent participation
+
+6.3 Slashing Conditions
+
 Validators lose rewards if:
-- approving fraudulent proofs  
-- repeated errors  
-- inactivity  
 
----
+approving fraudulent proofs
 
-# 7. Layer 4 — Output Layer (SRU Generation)
+performing inaccurate audits
 
-Once proofs pass all checks, the Oracle converts all earnings into:
+frequently failing consensus
 
-```
-Standardized Revenue Units (SRU)
-```
+7. Layer 4 — Output Layer (Verified Earnings → SRU Engine)
 
-## 7.1 SRU Conversion Formula
-SRU considers:
-- region weighting  
-- platform type  
-- payout currency  
-- global mobility index  
+The Oracle does not compute SRU.
+Instead, it outputs verified, structured earnings data to the SRU Engine.
 
-## 7.2 Role of SRU
-SRU determines:
-- daily yield  
-- global contribution weight  
-- proportional staker rewards  
+7.1 Output Components
 
-## 7.3 Submitted → Verified → Yield Cycle
-1. Earnings submitted  
-2. Oracle verifies  
-3. Oracle assigns SRU  
-4. Added to Yield Vault  
-5. Yield distributed to $RDR stakers  
+Each cycle includes:
 
----
+total verified earnings per worker
 
-# 8. Oracle Versions (Roadmap)
+platform-level breakdown
 
-## Oracle v1 (2025)
-- OCR  
-- timestamp + region checks  
-- validator-assisted audits  
+region metadata
 
-## Oracle v2 (2026)
-- ML anomaly detection  
-- automated SRU conversion  
-- near-zero manual audits  
+cycle timestamp
 
-## Oracle v3 (Future)
-- platform API integrations  
-- automated multi-platform ingestion  
+Merkle root of all verified proofs
 
-## Oracle v4 (Future)
-- zero-knowledge proofs for mobility income  
+7.2 SRU Engine Integration
 
----
+The SRU Engine uses Oracle data to calculate:
 
-# 9. Conclusion
+region weight
 
-The Ridera Oracle is a global verification engine engineered for mobility-based RWA systems.
+platform weight
 
-It ensures:
-- trust  
-- transparency  
-- standardization  
-- decentralization  
-- global compatibility  
+category weight
 
-It is the foundation that makes Ridera yield real, verifiable, and globally scalable.
+final SRU output per worker
 
+These SRU outputs then feed directly into the Yield Vault for reward generation.
+
+8. Oracle Version Roadmap
+Oracle v1 — 2025
+
+OCR-based parsing
+
+Timestamp + region checks
+
+Rule-based fraud detection
+
+Basic validator involvement
+
+Oracle v2 — 2026
+
+Full ML anomaly detection
+
+Automated batching
+
+Cross-platform merging
+
+Validator staking + slashing
+
+Oracle v3 — Future
+
+Direct API integrations with platforms
+
+Fully automated ingestion
+
+Regional payout modeling
+
+Oracle v4 — Future
+
+Zero-knowledge proofs for income verification
+
+Full decentralization of proof verification
+
+9. Conclusion
+
+The Ridera Oracle is a global, tamper-resistant verification engine designed for mobility-based RWA systems.
+It ensures that every SRU issued by the protocol is:
+
+backed by real work
+
+cryptographically verified
+
+globally consistent
+
+fraud-resistant
+
+transparent and fully auditable
+
+The Oracle is the foundation that allows Ridera to convert global mobility labor into reliable on-chain yield—safely, fairly, and at global scale.
