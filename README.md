@@ -39,7 +39,7 @@ Full documentation and whitepaper are available in the `/docs` directory:
 
 - **Whitepaper** → `/docs/whitepaper.md`  
 - **Architecture** → `/docs/architecture.md`  
-- **Tokenomics** → `/docs/tokenomics.md`  
+- **Tokenomics** → `/tokenomics`  
 - **Emission Model** → `/docs/emission-model.md`  
 
 
