@@ -2,6 +2,21 @@
 ### Global Mobility RWA Protocol  
 ### A Mobility RWA Infrastructure Layer Built on Base
 
+# Executive Summary
+
+Ridera is a Real-World Work (RWW) protocol that converts verified gig-worker earnings 
+into standardized on-chain productivity units called SRU. These are stored on-chain 
+via cryptographic proofs and used to generate sustainable RDR token rewards based on 
+real global economic activity.
+
+Ridera is not a gig app. It is a global infrastructure layer that brings real-world 
+labor output into Web3 using decentralized verification, standardized economic 
+models, and scalable deployment on Base.
+
+This whitepaper outlines Ridera's architecture, SRU standard, Oracle verification 
+pipeline, Proof Registry, dynamic emission model, token utility, roadmap, and 
+ecosystem integrations.
+
 ---
 # 1. Overview
 
