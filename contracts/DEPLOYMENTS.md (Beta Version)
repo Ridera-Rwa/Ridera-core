@@ -9,7 +9,7 @@ before Testnet Public and Mainnet launch.
 ## 🚀 Current Beta Contracts
 
 ### 1. RDRT Token (ERC20)
-**Address**: 0x3d6a3a22A4670594878c71cFcE1eF3d28E170591 
+**Address**: 0x9d28d89fE48ff7cC6ADBCAD13001e19176D5c847 
 
 **Purpose**:  
 - Native token for staking and rewards  
@@ -18,8 +18,7 @@ before Testnet Public and Mainnet launch.
 ---
 
 ### 2. Proof Registry
-*Address:* 0x366692Ef6a728062CC559f8b1f46cE64448f528d 
-
+*Address:* 0x936e406dAD13Aa55ff747e80Bd1D9e630AB1B5d7
 *Purpose:*  
 - Stores cycleId → (merkleRoot, totalSRU, timestamp)  
 - Receives SRU data from SRU Engine or admin  
@@ -28,7 +27,7 @@ before Testnet Public and Mainnet launch.
 ---
 
 ### 3. Yield Vault  
-*Address:* 0x5916E2e4e60ad57796345C1eb09313228D575572 
+*Address:* 0x51e962361F4FCcC50ccf9d02367AbD40169D28eB 
 
 *Purpose:*  
 - Reads cycle data from Proof Registry  
@@ -38,7 +37,7 @@ before Testnet Public and Mainnet launch.
 ---
 
 ### 4. Staking  
-Address: 0x9A24878749E8591Ad4CB7a010e98699684788a7c 
+Address: 0x46be8561fCf74a2D63AeaE25981aE3F74ad88F8e 
 
 Purpose:  
 - Users stake RDRT  
