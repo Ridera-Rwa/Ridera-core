@@ -1,10 +1,15 @@
 # Ridera Test Token (RDRT)
 
-## Contract
+
+## Deployment Information
 **Name:** Ridera test token
-**Path:** contracts/token/RideraDailyMint.sol  
-**Network:** Testnet only  
+**Path:** contracts/token/RideraTestToken.sol  
+**Network:** Base Testnet only  
 **Status:** Beta
+**Contract Address:**  
+`0x9d28d89fE48ff7cC6ADBCAD13001e19176D5c847`
+
+⚠️ Testnet deployment only. Address will change before mainnet.
 
 ---
 
